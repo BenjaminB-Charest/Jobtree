@@ -10,9 +10,12 @@
 
         <meta charset="utf-8">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-                integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-                crossorigin="anonymous">
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -32,11 +35,56 @@
 </head>
 
 <body>
-        <div id="map"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
-        async>
-        </script>
-        <input id="test" type="text">
-        <button onclick="test_func()">test</button>
+     
+
+        <div class="mainContainer">
+                <div class = "top-nav-container">
+                        <div class="top-nav-search-bar-section">
+                          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        </div>
+                        <div class="top-nav-filter-section">
+                          <mat-form-field appearance="fill">
+                            <mat-label>CityFilter</mat-label>
+                            <input matInput placeholder="Ex.Montreal">
+                          </mat-form-field>
+                          
+                          <mat-form-field appearance="fill">
+                            <mat-label>Type Of Position</mat-label>
+                            <input matInput placeholder="Ex.Mont-Royal">
+                          </mat-form-field>
+                      
+                          <button mat-button>Search</button>
+                        </div>
+                      </div>
+                      <div class = "mapsAndIndex">
+                        <div class = "display-job">
+                                <div class = "jobTitle">
+                                        <div class ="logo">
+                                        logo
+                                        </div>
+                                        <div  class ="description">
+                                          description
+                                        </div>
+                                        <div class = "index">
+                                          index
+                                        </div>
+                                      </div>
+                                </div>
+                        <div class = "display-google-maps">
+                              <div class = "container2">   <div id="map"></div>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
+                                async>
+                                </script>
+                                <input id="test" type="text">
+                                <button onclick="test_func()">test</button></div>
+                              <div class ="container3">categories and index</div>
+                        </div>
+                      </div>
+                              
+                      
+                      
+        </div>
+
+
 
 </body>
