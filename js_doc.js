@@ -121,3 +121,14 @@ function deleteMarkers(markersArray) {
   }
   markersArray = [];
 }
+
+"=========================================================================="
+
+function onSearch(){
+  let searchInput = document.getElementsByClassName('search-input');
+  let cityFilterInput = document.getElementsByClassName('city-input');
+  let jobTypeInput = document.getElementsByClassName('position-input');
+  console.log(searchInput[0].value);
+  console.log(cityFilterInput[0].value);
+  console.log(jobTypeInput[0].value);
+}

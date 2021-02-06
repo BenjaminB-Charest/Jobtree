@@ -1,11 +1,11 @@
-#map{
-        height: 400px;
-        width: 400px;
+#map {
+  height: 400px;
+  width: 400px;
 }
 
 .container {
-        width: 100%;
-        height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .containerElements {
@@ -65,66 +65,93 @@
   border: green 3px solid;
 }
 
-.top-nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  height : auto;
-  background-image: url(../../../assets/line-background-smoke-veil-wallpaper.jpg);
-  border: 2px solid black;
+
+mat-label {
+  color: red;
 }
 
-mat-label{
-  color: red;
+.top-nav-container {
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  border: 2px solid black;
 }
 
 .top-nav-container .top-nav-search-bar-section {
   float: left;
-  width: 20%;
+  width: auto;
   margin-left: 20px;
 }
 
 .top-nav-container .top-nav-filter-section {
+  width: auto;
   float: right;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
 }
 
+<<<<<<< HEAD
 .jobTitle{
   height: auto;
   display: flex;;
   width: 100%;
   color: white;
+=======
+.top-nav-container .top-nav-submit-button {
+  width: auto;
+  float: right;
 }
 
-.logo{
+.top-nav-filter-section .city-filter-input {
+  float: right;
+>>>>>>> 53e21957438938233538be9d4df765c89e051a93
+}
+
+.top-nav-filter-section .submit-button {
+  float: right;
+}
+
+
+.top-nav-filter-section .job-type-input {
+  float: right;
+}
+
+.submit-button {
+  float: right;
+}
+
+.jobTitle {
   display: flex;
+  ;
+  width: 100%;
+}
+
+.logo {
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   background-color: black;
   width: 25%;
   height: auto;
   color: white;
 }
 
-.description{
+.description {
   display: flex;
   height: auto;
   justify-self: start;
   flex-direction: column;
   background-color: purple;
-  width: 50%; 
+  width: 50%;
 }
 
+<<<<<<< HEAD
 .description p {
   margin: 10px;
 }
 
 .index{
+=======
+.index {
+>>>>>>> 53e21957438938233538be9d4df765c89e051a93
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,23 +159,26 @@ mat-label{
   background-color: green;
 }
 
-.container2{
-   display: flex;
-   justify-content: center;
-   width: 100%;
-   height: auto;
+.container2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
 }
 
-.container3{
+.container3 {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: blue;
   width: 100%;
   height: auto;
+<<<<<<< HEAD
 }     
 
 #jobsHandler{
   width: 70%;
   margin: 5px;
+=======
+>>>>>>> 53e21957438938233538be9d4df765c89e051a93
 }
