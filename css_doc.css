@@ -64,33 +64,49 @@
   border: green 3px solid;
 }
 
-.top-nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-  background-image: url(../../../assets/line-background-smoke-veil-wallpaper.jpg);
-  border: 2px solid black;
-}
 
 mat-label {
   color: red;
 }
 
+.top-nav-container {
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  border: 2px solid black;
+}
+
 .top-nav-container .top-nav-search-bar-section {
   float: left;
-  width: 20%;
+  width: auto;
   margin-left: 20px;
 }
 
 .top-nav-container .top-nav-filter-section {
+  width: auto;
   float: right;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
+}
+
+.top-nav-container .top-nav-submit-button {
+  width: auto;
+  float: right;
+}
+
+.top-nav-filter-section .city-filter-input {
+  float: right;
+}
+
+.top-nav-filter-section .submit-button {
+  float: right;
+}
+
+
+.top-nav-filter-section .job-type-input {
+  float: right;
+}
+
+.submit-button {
+  float: right;
 }
 
 .jobTitle {
