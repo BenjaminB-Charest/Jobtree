@@ -114,11 +114,16 @@ mat-label {
   width: 100%;
 }
 
+img{
+  width: 100px;
+  height: 100px;
+}
+
 .logo {
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
-  background-color: black;
+  align-items: center;
+  
   width: 25%;
   height: auto;
   color: white;
@@ -164,4 +169,6 @@ mat-label {
 #jobsHandler{
   width: 70%;
   margin: 5px;
+  height: 500px;
+  overflow-y: auto;
 }
