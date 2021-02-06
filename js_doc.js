@@ -4,14 +4,14 @@ let infowindow;
 
 
 function initMap() {
-  const sydney = new google.maps.LatLng(-33.867, 151.195);
+  const montreal = new google.maps.LatLng(45.508888, -73.561668);
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
-    center: sydney,
-    zoom: 15,
+    center: montreal,
+    zoom: 12,
   });
   const request = {
-    query: "Museum of Contemporary Art Australia",
+    query: "Polytechnique Montraal",
     fields: ["name", "geometry"],
   };
   service = new google.maps.places.PlacesService(map);
