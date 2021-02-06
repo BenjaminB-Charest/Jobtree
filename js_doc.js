@@ -11,7 +11,7 @@ function initMap() {
     zoom: 12,
   });
   const request = {
-    query: "Polytechnique Montraal",
+    query: "Polytechnique Montreal",
     fields: ["name", "geometry"],
   };
   service = new google.maps.places.PlacesService(map);
