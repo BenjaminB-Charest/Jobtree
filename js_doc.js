@@ -6,6 +6,8 @@ let infoWindow;
 let directionsService;
 let directionsRenderer;
 let markersArray = [];
+
+let medianPriceArray = parseHousingJSON();
         
 let personal_address = "4226 Ave Marcil, Montreal"
 
@@ -122,11 +124,17 @@ function deleteMarkers(markersArray) {
   markersArray = [];
 }
 
-function addHeatMap(heatmapData) {
-  heatMap = new googles.maps.visualization.HeatMapLayer({
-    data: heatmapData
+function addHeatMap() {
+  // Montreal city borders
+  map.data.loadGeoJson("montreal_geojson.geojson");
+  map.data.setStyle((feature) => {
+    calculateIndex(feature.getProperty("NOM"));
+    console.log(feature.getProperty("NOM"));
+  return /**  @type {google.maps.Data.StyleOptions} */ {
+      fillColor: feature.getProperty("color"),
+      strokeWeight: 1,
+    };
   });
-  heatMap.setMap(map);
 }
 
 function onSearch(){
@@ -137,3 +145,28 @@ function onSearch(){
   console.log(cityFilterInput[0].value);
   console.log(jobTypeInput[0].value);
 }
+
+function calculateIndex(neighbourhood) {
+  let medianHousingPrice = 0;
+  for (var i = 0; i < medianPriceArray.length; i++) { 
+    if (neighbourhood === medianPriceArray[i].city)
+      medianHousingPrice = medianPriceArray[i].medianPrice;
+  }
+  console.log(medianHousingPrice);
+  const medianHousingPriceMontreal = 1360.0;
+  let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal;
+  //let timeToOfficeIndex = (0.7 * commuteTimePublicTransport + 0.3 * commuteTimePrivateTransport) / 30;
+  return (medianHousingIndex); //+ timeToOfficeIndex);
+}
+
+function parseHousingJSON() {
+  let array = []
+  fetch("neighbourhood_housing_price.json").then(response => response.json())
+    .then(json => {
+      for (const cityJSON of json) {
+        array.push(cityJSON);
+      }
+    });
+  return array;
+}
+
