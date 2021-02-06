@@ -88,21 +88,11 @@ mat-label {
   float: right;
 }
 
-<<<<<<< HEAD
 .jobTitle{
   height: auto;
   display: flex;;
   width: 100%;
   color: white;
-=======
-.top-nav-container .top-nav-submit-button {
-  width: auto;
-  float: right;
-}
-
-.top-nav-filter-section .city-filter-input {
-  float: right;
->>>>>>> 53e21957438938233538be9d4df765c89e051a93
 }
 
 .top-nav-filter-section .submit-button {
@@ -143,15 +133,11 @@ mat-label {
   width: 50%;
 }
 
-<<<<<<< HEAD
 .description p {
   margin: 10px;
 }
 
 .index{
-=======
-.index {
->>>>>>> 53e21957438938233538be9d4df765c89e051a93
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,12 +159,9 @@ mat-label {
   background-color: blue;
   width: 100%;
   height: auto;
-<<<<<<< HEAD
 }     
 
 #jobsHandler{
   width: 70%;
   margin: 5px;
-=======
->>>>>>> 53e21957438938233538be9d4df765c89e051a93
 }
