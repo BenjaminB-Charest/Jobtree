@@ -5,6 +5,8 @@
         <title>Jobtree</title>
 
         <script type="text/javascript" src="js_doc.js"></script>
+
+        <script type="text/javascript" src="affichage.js"></script>
         <link rel="icon" href="https://d1h0x9w88ijkiq.cloudfront.net/3705/images/favicon_play.ico"
                 crossorigin="anonymous">
 
@@ -34,14 +36,16 @@
         <link rel="stylesheet" href="css_doc.css">
 </head>
 
-<body>
-        <div class = "top-nav-container">
-                <div class="top-nav-search-section">
-                        <div class="search">
-                           <input type="text" class="searchTerm" placeholder="What are you looking for?">
-                           <button type="submit" class="searchButton">
-                             <i class="fa fa-search"></i>
-                          </button>
+<body onload ="chargerDisplayJobs()">
+        <div class="mainContainer">
+                <div class = "top-nav-container">
+                        <div class="top-nav-search-section">
+                                <div class="search">
+                                   <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                   <button type="submit" class="searchButton">
+                                     <i class="fa fa-search"></i>
+                                  </button>
+                                </div>
                         </div>
                 </div>
 
@@ -70,29 +74,18 @@
                 <div class="top-nav-submit-button">
                         <button class="submit-button"onclick="onSearch()">Search</button>
                 </div>
-        </div>
-              <div class = "mapsAndIndex">
-                <div class = "display-job">
-                        <div class = "jobTitle">
-                                <div class ="logo">
-                                logo
-                                </div>
-                                <div  class ="description">
-                                  description
-                                </div>
-                                <div class = "index">
-                                  index
-                                </div>
-                              </div>
+                      <div class = "mapsAndIndex">
+                        <div  id = "jobsHandler"  >
                         </div>
-                <div class = "display-google-maps">
-                      <div class = "container2">   <div id="map"></div>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
-                        async>
-                        </script>
-                        <input id="test" type="text">
-                        <button onclick="test_func()">test</button></div>
-                      <div class ="container3">categories and index</div>
-                </div>
+                        <div id="googleMaps" class = "display-google-maps">
+                              <div class = "container2">   <div id="map"></div>
+                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
+                                async>
+                                </script>
+                                <input id="test" type="text">
+                                <button onclick="test_func()">test</button></div>
+                              <div class ="container3">categories and index</div>
+                        </div>
+                      </div> 
         </div>
 </body>

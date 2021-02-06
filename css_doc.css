@@ -9,9 +9,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 100%;
+  height: auto;
   padding: 5px;
-  margin-right: 5px;
+
   border: 3px solid black;
 }
 
@@ -32,7 +33,7 @@
   display: flex;
   flex-direction: column;
   padding: 5px;
-  width: 100%;
+  width: 70%;
   display: flex;
   height: 70%;
   height: auto;
@@ -82,6 +83,14 @@
   float: right;
 }
 
+.jobTitle {
+  height: auto;
+  display: flex;
+  ;
+  width: 100%;
+  color: white;
+}
+
 .top-nav-filter-section .submit-button {
   float: right;
 }
@@ -109,11 +118,16 @@
   width: 100%;
 }
 
+img {
+  width: 100px;
+  height: 100px;
+}
+
 .logo {
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
-  background-color: black;
+  align-items: center;
+
   width: 25%;
   height: auto;
   color: white;
@@ -121,10 +135,15 @@
 
 .description {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  justify-self: start;
+  flex-direction: column;
   background-color: purple;
   width: 50%;
+}
+
+.description p {
+  margin: 10px;
 }
 
 .index {
@@ -150,7 +169,6 @@
   width: 100%;
   height: auto;
 }
-
 
 body {
   background: #f2f2f2;
@@ -193,4 +211,11 @@ body {
 /*Resize the wrap to see the search bar change!*/
 .top-nav-search-section {
   width: 30%;
+}
+
+#jobsHandler {
+  width: 70%;
+  margin: 5px;
+  height: 500px;
+  overflow-y: auto;
 }
