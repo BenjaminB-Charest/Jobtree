@@ -35,27 +35,34 @@
 </head>
 
 <body>
-     
-
         <div class="mainContainer">
                 <div class = "top-nav-container">
                         <div class="top-nav-search-bar-section">
-                          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                                <input class="search-input" type="text" placeholder="Search">
                         </div>
+
+                        <div class="top-nav-submit-button">
+                                <button class="submit-button"onclick="onSearch()">Search</button>
+                        </div>
+
                         <div class="top-nav-filter-section">
-                          <mat-form-field appearance="fill">
-                            <mat-label>CityFilter</mat-label>
-                            <input matInput placeholder="Ex.Montreal">
-                          </mat-form-field>
-                          
-                          <mat-form-field appearance="fill">
-                            <mat-label>Type Of Position</mat-label>
-                            <input matInput placeholder="Ex.Mont-Royal">
-                          </mat-form-field>
-                      
-                          <button mat-button>Search</button>
+                                <form>
+                                        <div class="city-filter-input">
+                                                <label>City Filter:</label>
+                                                <input class="city-input" type="text" placeholder="Ex.Montreal">
+                                        </div>
+                                        <div class="job-type-input">
+                                                <label>Position Filter:</label>
+                                                <select class="position-input">
+                                                        <option value="0">Type of position</option>
+                                                        <option value="1">Internship</option>
+                                                        <option value="2">Full-Time</option>
+                                                        <option valie="3">Part-Time</option>
+                                                </select>
+                                        </div>
+                                </form>
                         </div>
-                      </div>
+                </div>
                       <div class = "mapsAndIndex">
                         <div class = "display-job">
                                 <div class = "jobTitle">
