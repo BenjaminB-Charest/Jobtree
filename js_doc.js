@@ -1,4 +1,4 @@
-let map;
+let map, heatMap;
 let servicePlaces;
 let geocoder;
 let serviceDistanceMatrix;
@@ -120,4 +120,11 @@ function deleteMarkers(markersArray) {
     markersArray[i].setMap(null);
   }
   markersArray = [];
+}
+
+function addHeatMap(heatmapData) {
+  heatMap = new googles.maps.visualization.HeatMapLayer({
+    data: heatmapData
+  });
+  heatMap.setMap(map);
 }
