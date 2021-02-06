@@ -17,9 +17,6 @@ function initMap() {
   service = new google.maps.places.PlacesService(map);
   service.findPlaceFromQuery(request, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (let i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
       map.setCenter(results[0].geometry.location);
     }
   });
@@ -27,7 +24,7 @@ function initMap() {
 
 function test_func() {
    var content = document.getElementById("test").value;
-   service = new google.maps.places.PlacesService(map);
+   servicePlaces = new google.maps.places.PlacesService(map);
    var request = {
     query: content,
     fields: ['name', 'geometry'],
@@ -35,9 +32,6 @@ function test_func() {
 
   service.findPlaceFromQuery(request, function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
       map.setCenter(results[0].geometry.location);
     }
   });       
@@ -52,4 +46,61 @@ function createMarker(place) {
     infowindow.setContent(place.name);
     infowindow.open(map);
   });
+}
+
+// Show the itinerary to the office
+function calculateAndDisplayRoute(directionsService, directionsRenderer, place) {
+  directionsService.route(
+    {
+      origin: {
+        query: personal_address,
+      },
+      destination: {
+        query: place,
+      },
+      travelMode: google.maps.TravelMode.DRIVING,
+    },
+    (response, status) => {
+      if (status === "OK") {
+        directionsRenderer.setDirections(response);
+      } else {
+        window.alert("Directions request failed due to " + status);
+      }
+    }
+  );
+  directionsRenderer.setMap(map);
+}
+
+// Get the data for the time & distance from the office
+function calculateDistanceMatrix(destination){
+geocoder = new google.maps.Geocoder();
+serviceDistanceMatrix = new google.maps.DistanceMatrixService()
+  serviceDistanceMatrix.getDistanceMatrix(
+    {
+      origins: [personal_address],
+      destinations: [destination],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false,
+    },
+    (response, status) => {
+      if (status !== "OK") {
+        alert("Error was: " + status);
+      } else {
+          const results = response.rows[0].elements;
+          console.log(results[0].distance.text +
+            " in " +
+            results[0].duration.text +
+            "");
+      }
+    }
+  );
+}
+
+function deleteMarkers(markersArray) {
+  for (let i = 0; i < markersArray.length; i++) {
+    markersArray[i].setMap(null);
+  }
+  markersArray = [];
 }
