@@ -24,9 +24,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70%;
+  width: 100%;
+  height: auto;
   padding: 5px;
-  margin-right: 5px;
+
   border: 3px solid black;
 }
 
@@ -47,7 +48,7 @@
   display: flex;
   flex-direction: column;
   padding: 5px;
-  width: 100%;
+  width: 70%;
   display: flex;
   height: 70%;
   height: auto;
@@ -87,13 +88,11 @@ mat-label {
   float: right;
 }
 
-.top-nav-container .top-nav-submit-button {
-  width: auto;
-  float: right;
-}
-
-.top-nav-filter-section .city-filter-input {
-  float: right;
+.jobTitle{
+  height: auto;
+  display: flex;;
+  width: 100%;
+  color: white;
 }
 
 .top-nav-filter-section .submit-button {
@@ -127,13 +126,18 @@ mat-label {
 
 .description {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto;
+  justify-self: start;
+  flex-direction: column;
   background-color: purple;
   width: 50%;
 }
 
-.index {
+.description p {
+  margin: 10px;
+}
+
+.index{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,4 +159,9 @@ mat-label {
   background-color: blue;
   width: 100%;
   height: auto;
+}     
+
+#jobsHandler{
+  width: 70%;
+  margin: 5px;
 }

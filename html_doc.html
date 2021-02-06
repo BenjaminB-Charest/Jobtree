@@ -5,6 +5,8 @@
         <title>Jobtree</title>
 
         <script type="text/javascript" src="js_doc.js"></script>
+
+        <script type="text/javascript" src="affichage.js"></script>
         <link rel="icon" href="https://d1h0x9w88ijkiq.cloudfront.net/3705/images/favicon_play.ico"
                 crossorigin="anonymous">
 
@@ -34,7 +36,7 @@
         <link rel="stylesheet" href="css_doc.css">
 </head>
 
-<body>
+<body onload ="creerJobDisplay()">
         <div class="mainContainer">
                 <div class = "top-nav-container">
                         <div class="top-nav-search-bar-section">
@@ -64,20 +66,9 @@
                         </div>
                 </div>
                       <div class = "mapsAndIndex">
-                        <div class = "display-job">
-                                <div class = "jobTitle">
-                                        <div class ="logo">
-                                        logo
-                                        </div>
-                                        <div  class ="description">
-                                          description
-                                        </div>
-                                        <div class = "index">
-                                          index
-                                        </div>
-                                      </div>
-                                </div>
-                        <div class = "display-google-maps">
+                        <div  id = "jobsHandler"  >
+                        </div>
+                        <div id="googleMaps" class = "display-google-maps">
                               <div class = "container2">   <div id="map"></div>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
                                 async>
@@ -86,10 +77,7 @@
                                 <button onclick="test_func()">test</button></div>
                               <div class ="container3">categories and index</div>
                         </div>
-                      </div>
-                              
-                      
-                      
+                      </div> 
         </div>
 
 
