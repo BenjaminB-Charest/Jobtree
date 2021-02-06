@@ -1,24 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
 #map {
   height: 400px;
   width: 400px;
 }
-
-.container {
-  width: 100%;
-  height: 100%;
-}
-
-.containerElements {
-  width: 100%;
-}
-
-.subContainer {
-  padding: 5px;
-  border: 3px solid blue;
-  display: flex;
-  justify-self: start;
-}
-
 
 .display-job {
   display: flex;
@@ -64,31 +49,32 @@
   border: green 3px solid;
 }
 
-
-mat-label {
-  color: red;
-}
-
 .top-nav-container {
   flex-direction: row;
   width: 100%;
   height: auto;
-  border: 2px solid black;
+  background-color: #0b7988;
 }
 
 .top-nav-container .top-nav-search-bar-section {
   float: left;
   width: auto;
   margin-left: 20px;
+  height: auto;
 }
 
 .top-nav-container .top-nav-filter-section {
   width: auto;
   float: right;
+  background-color: #0b7988;
 }
 
 .top-nav-container .top-nav-submit-button {
   width: auto;
+  float: right;
+}
+
+.top-nav-filter-section .price-range-input {
   float: right;
 }
 
@@ -103,6 +89,14 @@ mat-label {
 
 .top-nav-filter-section .job-type-input {
   float: right;
+}
+
+.city-input {
+  width: 150px;
+}
+
+.position-input {
+  width: 150px;
 }
 
 .submit-button {
@@ -155,4 +149,48 @@ mat-label {
   background-color: blue;
   width: 100%;
   height: auto;
+}
+
+
+body {
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus {
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.top-nav-search-section {
+  width: 30%;
 }
