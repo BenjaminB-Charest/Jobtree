@@ -1,106 +1,107 @@
-[
-    {
-        "Company Name": "Lyft",
-        "Position": "Software Engineer",
-        "Salary": "100000",
-        "Adresse": "416 Boulevard de Maisonneuve O, Montréal, QC H3A 1L2",
-        "Image": "Lyft.PNG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "Desjardins",
-        "Position": "Analyste-programmeur(se) - QRM",
-        "Salary": "70000",
-        "Adresse": "1050, Côte du Beaver Hall Montréal",
-        "Image": "Desjardins.JPG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "Giro",
-        "Position": "Analyste-programmeur C++",
-        "Salary": "65000",
-        "Adresse": "75 Rue de Port-Royal E, Montreal, QC H3L 3T1, Canada",
-        "Image": "Giro.JPG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "RBC",
-        "Position": "Software Developer, SUmmer 2021 Student Opportunities",
-        "Salary": "55000",
-        "Adresse": "1 Place Ville-Marie, Downtown Montreal, Montreal, QC H3B, Canada",
-        "Image": "RBC.JPG",
-        "Type": "Internship"
-    },
-    {
-        "Company Name": "Ubisoft",
-        "Position": "Back-End Programmer (Technology Group)",
-        "Salary": "77000",
-        "Adresse": "5505 Boulevard Saint-Laurent, Montreal, QC H2T 1S6, Canada",
-        "Image": "Ubisoft.PNG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "Shutterstock",
-        "Position": "Software Engineer, Editor",
-        "Salary": "110000",
-        "Adresse": "4398 Boulevard Saint-Laurent, Montreal, QC H2W 1Z5, Canada",
-        "Image": "Shutterstock.JPG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "Ericsson",
-        "Position": "Software Developer",
-        "Salary": "77000",
-        "Adresse": "Rue Cohen, Saint-Laurent, QC H4R 2A4",
-        "Image": "Ericsson.PNG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "Electronic Arts (EA)",
-        "Position": "Software Engineer in Test - Temporary",
-        "Salary": "75000",
-        "Adresse": "2200 Rue Stanley, Downtown Montreal, Montreal, QC H3A 1R6, Canada",
-        "Image": "Ericsson.PNG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "Matrox",
-        "Position": "Software Developper : Validation",
-        "Salary": "76000",
-        "Adresse": "1055 St Regis Blvd, Dorval, QC H9P, Canada",
-        "Image": "Matrox.JPG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "Unity Technologies",
-        "Position": "Software Developper",
-        "Salary": "98000",
-        "Adresse": "1751 Rue Richardson, Le Sud-Ouest, Montreal, QC H3K 1G6, Canada",
-        "Image": "Unity.PNG",
-        "Type": "Internship"
-    },
-    {
-        "Company Name": "Ciena",
-        "Position": "New Grad: Test Engineer",
-        "Salary": "65000",
-        "Adresse": "2351 Boulevard Alfred Nobel #300, Saint-Laurent, QC H4S 2A9",
-        "Image": "Ciena.PNG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "CM Labs Simulations",
-        "Position": "Software Developer",
-        "Salary": "110000",
-        "Adresse": "645 Rue Wellington, Montreal, QC H3C, Canada",
-        "Image": "CM_Labs.PNG",
-        "Type": "Full-time"
-    },
-    {
-        "Company Name": "SAP",
-        "Position": "Developer",
-        "Salary": "70000",
-        "Adresse": "111 Rue Duke, Downtown Montreal, Montreal, QC H3C, Canada",
-        "Image": "SAP.JPG",
-        "Type": "Full-time"
-    }
-]
+{ "Companies" : [
+        {
+            "Company Name": "Lyft",
+            "Position": "Software Engineer",
+            "Salary": "100000",
+            "Adresse": "416 Boulevard de Maisonneuve O, Montréal, QC H3A 1L2",
+            "Image": "Lyft.PNG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "Desjardins",
+            "Position": "Analyste-programmeur(se) - QRM",
+            "Salary": "70000",
+            "Adresse": "1050, Côte du Beaver Hall Montréal",
+            "Image": "Desjardins.JPG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "Giro",
+            "Position": "Analyste-programmeur C++",
+            "Salary": "65000",
+            "Adresse": "75 Rue de Port-Royal E, Montreal, QC H3L 3T1, Canada",
+            "Image": "Giro.JPG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "RBC",
+            "Position": "Software Developer, SUmmer 2021 Student Opportunities",
+            "Salary": "55000",
+            "Adresse": "1 Place Ville-Marie, Downtown Montreal, Montreal, QC H3B, Canada",
+            "Image": "RBC.JPG",
+            "Type": "Internship"
+        },
+        {
+            "Company Name": "Ubisoft",
+            "Position": "Back-End Programmer (Technology Group)",
+            "Salary": "77000",
+            "Adresse": "5505 Boulevard Saint-Laurent, Montreal, QC H2T 1S6, Canada",
+            "Image": "Ubisoft.PNG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "Shutterstock",
+            "Position": "Software Engineer, Editor",
+            "Salary": "110000",
+            "Adresse": "4398 Boulevard Saint-Laurent, Montreal, QC H2W 1Z5, Canada",
+            "Image": "Shutterstock.JPG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "Ericsson",
+            "Position": "Software Developer",
+            "Salary": "77000",
+            "Adresse": "Rue Cohen, Saint-Laurent, QC H4R 2A4",
+            "Image": "Ericsson.PNG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "Electronic Arts (EA)",
+            "Position": "Software Engineer in Test - Temporary",
+            "Salary": "75000",
+            "Adresse": "2200 Rue Stanley, Downtown Montreal, Montreal, QC H3A 1R6, Canada",
+            "Image": "Ericsson.PNG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "Matrox",
+            "Position": "Software Developper : Validation",
+            "Salary": "76000",
+            "Adresse": "1055 St Regis Blvd, Dorval, QC H9P, Canada",
+            "Image": "Matrox.JPG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "Unity Technologies",
+            "Position": "Software Developper",
+            "Salary": "98000",
+            "Adresse": "1751 Rue Richardson, Le Sud-Ouest, Montreal, QC H3K 1G6, Canada",
+            "Image": "Unity.PNG",
+            "Type": "Internship"
+        },
+        {
+            "Company Name": "Ciena",
+            "Position": "New Grad: Test Engineer",
+            "Salary": "65000",
+            "Adresse": "2351 Boulevard Alfred Nobel #300, Saint-Laurent, QC H4S 2A9",
+            "Image": "Ciena.PNG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "CM Labs Simulations",
+            "Position": "Software Developer",
+            "Salary": "110000",
+            "Adresse": "645 Rue Wellington, Montreal, QC H3C, Canada",
+            "Image": "CM_Labs.PNG",
+            "Type": "Full-time"
+        },
+        {
+            "Company Name": "SAP",
+            "Position": "Developer",
+            "Salary": "70000",
+            "Adresse": "111 Rue Duke, Downtown Montreal, Montreal, QC H3C, Canada",
+            "Image": "SAP.JPG",
+            "Type": "Full-time"
+        }
+    ]
+}

@@ -48,7 +48,7 @@ function creerInformationRepas(objetJson, divRepas){
 }
 
 
-function creerJobDisplay(){
+function creerJobDisplay(objetJson){
     
   let displayMapsAndINdex = document.getElementById("jobsHandler");
   
