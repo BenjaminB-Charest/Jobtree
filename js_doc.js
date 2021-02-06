@@ -28,9 +28,6 @@ function initMap() {
   service = new google.maps.places.PlacesService(map);
   service.findPlaceFromQuery(request, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (let i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
       map.setCenter(results[0].geometry.location);
     }
   });
@@ -40,7 +37,7 @@ function initMap() {
 function test_func() {
   deleteMarkers(markersArray);
    var content = document.getElementById("test").value;
-   service = new google.maps.places.PlacesService(map);
+   servicePlaces = new google.maps.places.PlacesService(map);
    var request = {
     query: content,
     fields: ['name', 'geometry'],
@@ -48,9 +45,6 @@ function test_func() {
 
   service.findPlaceFromQuery(request, function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
       map.setCenter(results[0].geometry.location);
     }
   });       
@@ -71,7 +65,7 @@ function createMarker(place) {
   });
 }
 
-// This shows the itinerary to the office
+// Show the itinerary to the office
 function calculateAndDisplayRoute(directionsService, directionsRenderer, place) {
   directionsService.route(
     {
@@ -94,7 +88,7 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, place) 
   directionsRenderer.setMap(map);
 }
 
-// This gets the data for the time & distance from the office
+// Get the data for the time & distance from the office
 function calculateDistanceMatrix(destination){
 geocoder = new google.maps.Geocoder();
 serviceDistanceMatrix = new google.maps.DistanceMatrixService()
