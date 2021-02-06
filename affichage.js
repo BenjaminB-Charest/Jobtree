@@ -48,7 +48,22 @@ function creerInformationRepas(objetJson, divRepas){
 }
 
 
+
+function chargerDisplayJobs(){ 
+  fetch("jobs_data.json")
+  .then(response => response.json())
+  .then(json => {
+          for(const companies of json){
+                  creerJobDisplay(companies);
+          } 
+  });
+}
+
+
+
 function creerJobDisplay(objetJson){
+
+  
     
   let displayMapsAndINdex = document.getElementById("jobsHandler");
   
@@ -60,21 +75,23 @@ function creerJobDisplay(objetJson){
 
   let displayLogo = document.createElement('div');
   displayLogo.className = "logo";
+  
 
   let displayImg = document.createElement('img');
+  displayImg.src = objetJson.Image;
 
 
   let displayDescription = document.createElement('div');
   displayDescription. className = "description";
 
   let displayCompanyName = document.createElement('p');
-  displayCompanyName.innerHTML = "Company Name: ";
+  displayCompanyName.innerHTML = "Company Name: " + objetJson.CompanyName;
   
   let displayCompanyPosition = document.createElement('p');
-  displayCompanyPosition.innerHTML = "Position: ";
+  displayCompanyPosition.innerHTML = "Position: " + objetJson.Position;
 
   let displayCompanySalary = document.createElement('p');
-  displayCompanySalary.innerHTML = "Salary: ";
+  displayCompanySalary.innerHTML = "Salary: " + objetJson.Salary;
   
   let displayIndex = document.createElement('div');
   displayIndex.className = "index";
