@@ -4,7 +4,9 @@
 
 #map {
   height: 400px;
-  width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px;
 }
 
 .display-job {
@@ -258,10 +260,6 @@ img{
   
 }
 
-#map{
-  border-radius: 10px;
-}
-
 .container3 {
   display: flex;
   justify-content: center;
@@ -269,6 +267,7 @@ img{
   background-color: blue;
   width: 100%;
   height: auto;
+  margin-top: 50px;
 }
 
 body {

@@ -21,7 +21,7 @@ function initMap() {
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
     center: montreal,
-    zoom: 8,
+    zoom: 10,
   });
   const request = {
     query: "Polytechnique Montreal",
