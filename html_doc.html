@@ -11,10 +11,13 @@
 
         <meta charset="utf-8">
 
-        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>        
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+                rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+                integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+                crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -35,63 +38,69 @@
         <link rel="stylesheet" href="css_doc.css">
 </head>
 
-<body onload ="chargerDisplayJobs()">
+<body onload="chargerDisplayJobs()">
         <div class="mainContainer">
-                <div class = "top-nav-container">
+                <div class="top-nav-container">
                         <div class="top-nav-search-section">
                                 <div class="search">
-                                   <input type="text" class="searchTerm" placeholder="What job you looking for?">
-                                   <button type="submit" class="searchButton">
-                                     <i class="fa fa-search"></i>
-                                  </button>
+                                        <input type="text" class="searchTerm" placeholder="Search">
+                                        <button type="submit" class="searchButton" onclick="onSearch()">
+                                                <i class=" fa fa-search"></i>
+                                        </button>
                                 </div>
                         </div>
                         <div class="top-nav-filter-section">
-                                <img src="assets/jobtree_logo" alt="jobtree_logo" style="height: 10%; width: 10%; padding-top: 20px; padding-bottom: 20px; padding-right: 10px;">
-                                <form>
-                                        <div class="city-filter-input">
-                                                <label class="omrs-input-underlined" id="city-text">City Filter:</label>
-                                                <input class="city-input" type="input" placeholder="Ex.Montreal">
-                                        </div>
-                                        <div class="job-type-input">
-                                                <label id="job-text">Position Filter:</label>
-                                                <select class="position-input">
-                                                        <option value="invalid">Type of position</option>
-                                                        <option value="Internship">Internship</option>
-                                                        <option value="Full-time">Full-Time</option>
-                                                        <option valie="Part-time">Part-Time</option>
-                                                </select>
-                                        </div>
-                                </form>
+                                <img src="assets/jobtree_logo" alt="jobtree_logo"
+                                        style="height: 10%; width: 10%; padding-top: 20px; padding-bottom: 20px; padding-right: 10px;">
+                                <div class="job-type-input">
+                                        <label id="job-text">Type : </label>
+                                        <select class="position-input">
+                                                <option value="invalid">All</option>
+                                                <option value="Internship">Internship</option>
+                                                <option value="Full-time">Full-Time</option>
+                                                <option valie="Part-time">Part-Time</option>
+                                        </select>
+                                </div>
+                                <div class="job-type-input">
+                                        <label id="job-text">Minimum Salary : </label>
+                                        <input type="number" step="5000" value="0" class="min-input">
+                                </div>
                                 <div type="button" class="top-nav-submit-button">
-                                        <button class="submit-button" onclick="onSearch()">Search</button>
+                                        <button class="submit-button" onclick="onSearch()">Apply</button>
                                 </div>
                         </div>
                 </div>
 
-                <div class = "mapsAndIndex">
-                        <div  id = "jobsHandler"  ></div>
-                        <div id="googleMaps" class = "display-google-maps">
-                              <div class = "container2">   <div id="map"></div>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
-                                async>
-                                </script>
-                                
-                                <button onclick="addHeatMap()">test</button></div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
-                              <div class ="container3">categories and index</div>
+                <div class="mapsAndIndex">
+                        <div id="jobsHandler"></div>
+                        <div id="googleMaps" class="display-google-maps">
+                                <div class="container2">
+                                        <div id="map"></div>
+                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
+                                                async>
+                                                </script>
+
+
+                                        <button onclick="addHeatMap()">test</button>
+                                </div>
+                                <div class="heatMap">
+                                        <button>Afficher Heat Map </button>
+                                </div>
+
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
+                                <div class="container3">categories and index</div>
                         </div>
-                </div> 
+                </div>
         </div>
 </body>

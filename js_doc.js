@@ -186,6 +186,7 @@ function parseHousingJSON() {
 
 let jobTypeInput = document.getElementsByClassName('position-input');
 let searchInput = document.getElementsByClassName('searchTerm');
+let minSalryInput = document.getElementsByClassName('min-input');
 
 
 
@@ -194,14 +195,13 @@ function chargerDisplayJobs() {
     .then(response => response.json())
     .then(json => {
       for (const companies of json) {
-        if ((jobTypeInput[0].value == companies.Type || jobTypeInput[0].value == "invalid") && textFund(companies))
+        if ((jobTypeInput[0].value == companies.Type || jobTypeInput[0].value == "invalid") && textFound(companies) && companies.Salary >= minSalryInput[0].value)
           creerJobDisplay(companies);
       }
     });
-    medianPriceArray = parseHousingJSON();
 }
 
-function textFund(companie) {
+function textFound(companie) {
   if (searchInput[0].value == "") return true;
   if (companie.CompanyName.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   if (companie.Position.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
@@ -212,17 +212,10 @@ function textFund(companie) {
 }
 
 function onSearch() {
-  let searchInput = document.getElementsByClassName('searchTerm');
-  let cityFilterInput = document.getElementsByClassName('city-input');
-  let jobTypeInput = document.getElementsByClassName('position-input');
-  console.log(searchInput[0].value);
-  console.log(cityFilterInput[0].value);
-  console.log(jobTypeInput[0].value);
   let displayMapsAndINdex = document.getElementById("jobsHandler");
   displayMapsAndINdex.innerHTML = "";
   chargerDisplayJobs()
 }
-
 
 function creerJobDisplay(objetJson) {
   let displayMapsAndINdex = document.getElementById("jobsHandler");
