@@ -193,7 +193,7 @@ function textFound(companie) {
   if (searchInput[0].value == "") return true;
   if (companie.CompanyName.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   if (companie.Position.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
-  if (companie.Adresse.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
+  if (companie.Address.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   if (companie.Type.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   return false;
 }
