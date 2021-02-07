@@ -93,7 +93,7 @@
 
 .top-nav-filter-section {
   display: flex;
-  padding-left: 2%;
+  left: 2%;
   border-radius: 4px;
   background-color: #3b8dcf;
 }
@@ -107,9 +107,10 @@
 }
 
 .top-nav-submit-button {
-  padding-left: 3%;
+  padding-left: 100px;
   padding-bottom: 10px;
   float: right;
+  padding-right: 210px;
 }
 
 .city-filter-input {
@@ -148,7 +149,7 @@
 
 .job-type-input {
   padding-top: 40px;
-  padding-left: 20px;
+  padding-left: 50px;
   float: left;
 }
 
