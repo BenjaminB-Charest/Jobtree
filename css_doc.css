@@ -103,6 +103,14 @@
   background-color: #3b8dcf;
 }
 
+.top-nav-filter-section img{
+  height: 10%; 
+  width: 10%; 
+  padding-top: 20px; 
+  padding-bottom: 20px; 
+  padding-right: 10px;
+}
+
 .top-nav-submit-button {
   padding-left: 3%;
   padding-bottom: 10px;
