@@ -143,6 +143,7 @@ function onSearch(){
   console.log(searchInput[0].value);
   console.log(cityFilterInput[0].value);
   console.log(jobTypeInput[0].value);
+  
 }
 
 function calculateIndex(neighbourhood) {
