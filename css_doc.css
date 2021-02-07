@@ -93,15 +93,24 @@
 
 .top-nav-filter-section {
   display: flex;
-  padding-left: 2%;
+  left: 2%;
   border-radius: 4px;
   background-color: #3b8dcf;
 }
 
+.top-nav-filter-section img{
+  height: 10%; 
+  width: 10%; 
+  padding-top: 20px; 
+  padding-bottom: 20px; 
+  padding-right: 10px;
+}
+
 .top-nav-submit-button {
-  padding-left: 3%;
+  padding-left: 100px;
   padding-bottom: 10px;
   float: right;
+  padding-right: 210px;
 }
 
 .city-filter-input {
@@ -140,7 +149,7 @@
 
 .job-type-input {
   padding-top: 40px;
-  padding-left: 20px;
+  padding-left: 50px;
   float: left;
 }
 
@@ -349,4 +358,57 @@ body {
   background-color: lightblue; */
   margin: 5px;
 
+}
+
+
+#divIndexes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 215px;
+  margin-top: 20px;
+  width: 100%;
+  overflow-y: auto;
+  background-color: lightblue;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.indexesContainer{
+  width: 80%;
+  margin-top: 10px;
+  border: 3px solid white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.indexContainer{
+
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.indexNameContainer{
+  width: 70%;
+  color: black;
+  background-color: lightblue;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.indexValueContainer{
+  display: flex;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: green;
+  width: 30%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
