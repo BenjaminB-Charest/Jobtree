@@ -141,7 +141,7 @@ function addHeatMap() {
   });
 }
 function getMedianPrice(neighbourhood) {
-  let medianHousingPrice = 0; 
+  let medianHousingPrice = 0.0; 
   for (var i = 0; i < medianPriceArray.length; i++) { 
     if (neighbourhood === medianPriceArray[i].city)
       medianHousingPrice = medianPriceArray[i].medianPrice;
@@ -150,15 +150,13 @@ function getMedianPrice(neighbourhood) {
 }
 
 function calculateIndex(neighbourhood) {
-  console.log(distanceMatrixArray[transportIndex++]);
   const medianHousingPrice = getMedianPrice(neighbourhood);
   const medianHousingPriceMontreal = 1360.0;
   const livingCosts = 1069.0;
   let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal; 
-  console.log("medianHousing" + medianHousingIndex);
-  debugger;
+  console.log("medianHousing: " + medianHousingIndex);
   let salaryIndex = ((currentSalary / 12) - (medianHousingPrice + livingCosts)) / ((currentSalary / 12) * 0.3); 
-  console.log("salaryINdex" + salaryIndex);
+  console.log("salaryINdex: " + salaryIndex);
   let timeToOfficeIndex = (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]) / 30;
   console.log("timeToOfficeIndex:" + timeToOfficeIndex);
   return (medianHousingIndex + salaryIndex + timeToOfficeIndex);
@@ -199,13 +197,13 @@ function chargerDisplayJobs() {
           creerJobDisplay(companies);
       }
     });
+  medianPriceArray = parseHousingJSON();
 }
 
 function textFound(companie) {
   if (searchInput[0].value == "") return true;
   if (companie.CompanyName.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   if (companie.Position.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
-  if (companie.Salary.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   if (companie.Adresse.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   if (companie.Type.toLowerCase().search(searchInput[0].value.toLowerCase()) > -1) return true;
   return false;
