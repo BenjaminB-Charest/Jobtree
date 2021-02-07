@@ -139,15 +139,6 @@ function addHeatMap() {
   });
 }
 
-function onSearch(){
-  let searchInput = document.getElementsByClassName('searchTerm');
-  let cityFilterInput = document.getElementsByClassName('city-input');
-  let jobTypeInput = document.getElementsByClassName('position-input');
-  console.log(searchInput[0].value);
-  console.log(cityFilterInput[0].value);
-  console.log(jobTypeInput[0].value);
-}
-
 function calculateIndex(neighbourhood) {
   const salary = 60000; // FOR TESTING
   let medianHousingPrice = 0;
