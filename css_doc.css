@@ -217,8 +217,10 @@ img{
 }
 
 .description {
+  margin-right: 10px;
   display: flex;
-  justify-self: start;
+  align-items: flex-start;
+  justify-content: left;
   flex-direction: column;
   border: white solid 3px;
   border-radius: 15px;
@@ -226,8 +228,6 @@ img{
   width: 70%;
   background-color: lightblue;
   height: auto;
-  
-
 }
 
 .description p {
@@ -338,6 +338,7 @@ body {
   height: 30%;
   background-color: white;
   margin: 5px;
+  margin-bottom: 10px;
   text-decoration: none;
   border-radius: 10px;
   font-size: 15px;
