@@ -39,35 +39,39 @@
 <body onload ="chargerDisplayJobs()">
         <div class="mainContainer">
                 <div class = "top-nav-container">
-                        <div class="top-nav-search-bar-section">
-                                <input class="search-input" type="text" placeholder="Search">
+                        <div class="top-nav-search-section">
+                                <div class="search">
+                                   <input type="text" class="searchTerm" placeholder="What job you looking for?">
+                                   <button type="submit" class="searchButton">
+                                     <i class="fa fa-search"></i>
+                                  </button>
+                                </div>
                         </div>
-
-                        <div class="top-nav-submit-button">
-                                <button class="submit-button"onclick="onSearch()">Search</button>
-                        </div>
-
                         <div class="top-nav-filter-section">
                                 <form>
                                         <div class="city-filter-input">
-                                                <label>City Filter:</label>
-                                                <input class="city-input" type="text" placeholder="Ex.Montreal">
+                                                <label class="omrs-input-underlined" id="city-text">City Filter:</label>
+                                                <input class="city-input" type="input" placeholder="Ex.Montreal">
                                         </div>
                                         <div class="job-type-input">
-                                                <label>Position Filter:</label>
+                                                <label id="job-text">Position Filter:</label>
                                                 <select class="position-input">
-                                                        <option value="0">Type of position</option>
-                                                        <option value="1">Internship</option>
-                                                        <option value="2">Full-Time</option>
-                                                        <option valie="3">Part-Time</option>
+                                                        <option value="invalid">Type of position</option>
+                                                        <option value="Internship">Internship</option>
+                                                        <option value="Full-time">Full-Time</option>
+                                                        <option valie="Part-time">Part-Time</option>
                                                 </select>
                                         </div>
                                 </form>
+                                <div type="button" class="top-nav-submit-button">
+                                        <button class="submit-button"onclick="onSearch()">Search</button>
+                                </div>
                         </div>
                 </div>
-                      <div class = "mapsAndIndex">
+
+                <div class = "mapsAndIndex">
                         <div  id = "jobsHandler"  >
-                        </div>
+                </div>
                         <div id="googleMaps" class = "display-google-maps">
                               <div class = "container2">   <div id="map"></div>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
@@ -77,6 +81,6 @@
                                 <button onclick="addHeatMap()">test</button></div>
                               <div class ="container3">categories and index</div>
                         </div>
-                      </div> 
+                </div> 
         </div>
 </body>

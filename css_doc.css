@@ -1,24 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
+
 #map {
   height: 400px;
   width: 400px;
 }
-
-.container {
-  width: 100%;
-  height: 100%;
-}
-
-.containerElements {
-  width: 100%;
-}
-
-.subContainer {
-  padding: 5px;
-  border: 3px solid blue;
-  display: flex;
-  justify-self: start;
-}
-
 
 .display-job {
   display: flex;
@@ -65,43 +52,133 @@
   border: green 3px solid;
 }
 
-
-mat-label {
-  color: red;
-}
-
 .top-nav-container {
   flex-direction: row;
-  width: 100%;
+  width: auto;
   height: auto;
-  border: 2px solid black;
+  background-color: #a8d5db;
 }
 
-.top-nav-container .top-nav-search-bar-section {
+.top-nav-search-bar-section {
   float: left;
   width: auto;
   margin-left: 20px;
+  height: auto;
 }
 
-.top-nav-container .top-nav-filter-section {
+.top-nav-filter-section {
   width: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  border: 1px solid whitesmoke;
+  border-radius: 4px;
+  background-color: #00B4CC;
+}
+
+.top-nav-submit-button {
+  padding-bottom: 30px;
   float: right;
 }
 
-.jobTitle{
+.city-filter-input {
+  padding-left: 50px;
+  float: right;
+}
+
+.jobTitle {
   height: auto;
-  display: flex;;
+  display: flex;
+  ;
   width: 100%;
   color: white;
 }
 
-.top-nav-filter-section .submit-button {
+.submit-button {
   float: right;
+  color: #fff;
+  background-color: #e74c3c;
+  outline: none;
+  border: 0;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin-top: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
 }
 
 
-.top-nav-filter-section .job-type-input {
-  float: right;
+.job-type-input {
+  float: left;
+}
+
+#job-text {
+  color: white;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.job-type-input select {
+  background-color: #3b8dcf;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.job-type-input::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.job-type-input:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.job-type-input select option {
+  padding: 30px;
+}
+
+.city-input {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 70%;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+#city-text {
+  color: white;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.position-input {
+  width: 150px;
 }
 
 .submit-button {
@@ -114,7 +191,7 @@ mat-label {
   width: 100%;
 }
 
-img{
+img {
   width: 100px;
   height: 100px;
 }
@@ -123,7 +200,7 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   width: 25%;
   height: auto;
   color: white;
@@ -142,7 +219,7 @@ img{
   margin: 10px;
 }
 
-.index{
+.index {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,26 +242,69 @@ img{
   background-color: blue;
   width: 100%;
   height: auto;
-}     
+}
 
-#jobsHandler{
+body {
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus {
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.top-nav-search-section {
+  height: 100%;
+  width: 30;
+}
+
+#jobsHandler {
   width: 70%;
   margin: 5px;
   height: 500px;
   overflow-y: auto;
 }
 
-.valeurIndex{
+.valeurIndex {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80%;
   height: 60%;
-  font-size: 25px;  
+  font-size: 25px;
 }
 
 
-.apply{
+.apply {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,7 +317,7 @@ img{
   font-size: 18px;
 }
 
-.apply:hover{
+.apply:hover {
   opacity: 70%;
   text-decoration: none;
 }

@@ -1,54 +1,3 @@
-function creerInformationRepas(objetJson, divRepas){
-  let conteneurRepas = document.createElement('div');
-  conteneurRepas.className = "alimentFrigo";
-  
-  let divInfoAliments = document.createElement('div');
-  divInfoAliments.className = "infoAliments";
-  divInfoAliments.id = objetJson.id;
-  
-  let listeInfosRepasCategorie = document.createElement('li');
-  listeInfosRepasCategorie.innerHTML = "<b>Catégories: </b>" + objetJson.categories;
-  listeInfosRepasCategorie.setAttribute("align", "left");
-  
-  let listeInfosRepasQuantite = document.createElement('li');
-  listeInfosRepasQuantite.innerHTML = "<b> Quantité: </b>" + objetJson.quantite;
-  listeInfosRepasQuantite.setAttribute("align", "left");
-  
-  let listeInfosRepasDelai = document.createElement('li');
-  listeInfosRepasDelai.setAttribute("align", "left");
-  listeInfosRepasDelai.innerHTML = "<b> Date de péremption: </b>" + objetJson.delai;
-
-  let listeInfosRepasAllergenes = document.createElement('li');
-  listeInfosRepasAllergenes.setAttribute("align", "left");
-  listeInfosRepasAllergenes.innerHTML = "<b> Allergènes: </b>" + objetJson.allergenes
-
-  let boutonAjouterRepasPanier = document.createElement('button');
-  boutonAjouterRepasPanier.className = "boutonAjouterRepasPanier";
-  boutonAjouterRepasPanier.addEventListener(
-          "click", function(){
-                  boutonAfficheModaleRepasAjouterPanier();
-                  ajouterElementAuPanier(objetJson.nomRepas);
-                  afficherPanier(false);
-
-          }
-  );
-  boutonAjouterRepasPanier.innerHTML = "Ajouter l'élément au panier ";
-  boutonAjouterRepasPanierPlus = document.createElement('b');
-  boutonAjouterRepasPanier.className = "symboleAddition";
-  boutonAjouterRepasPanierPlus.innerHTML = "+";
-  
-  divInfoAliments.appendChild(listeInfosRepasCategorie);
-  divInfoAliments.appendChild(listeInfosRepasQuantite);
-  divInfoAliments.appendChild(listeInfosRepasDelai);
-  divInfoAliments.appendChild(listeInfosRepasAllergenes);
-  boutonAjouterRepasPanier.appendChild(boutonAjouterRepasPanierPlus);
-  divInfoAliments.appendChild(boutonAjouterRepasPanier);
-
-  divRepas.appendChild(divInfoAliments)
-}
-
-
-
 function chargerDisplayJobs(){ 
   fetch("jobs_data.json")
   .then(response => response.json())
@@ -58,8 +7,6 @@ function chargerDisplayJobs(){
           } 
   });
 }
-
-
 
 function creerJobDisplay(objetJson){
 
