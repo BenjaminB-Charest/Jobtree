@@ -137,7 +137,7 @@ function addHeatMap() {
 }
 
 function onSearch(){
-  let searchInput = document.getElementsByClassName('search-input');
+  let searchInput = document.getElementsByClassName('searchTerm');
   let cityFilterInput = document.getElementsByClassName('city-input');
   let jobTypeInput = document.getElementsByClassName('position-input');
   console.log(searchInput[0].value);
@@ -151,12 +151,12 @@ function calculateIndex(neighbourhood) {
     if (neighbourhood === medianPriceArray[i].city)
       medianHousingPrice = medianPriceArray[i].medianPrice;
   }
-  console.log(medianHousingPrice);
   const medianHousingPriceMontreal = 1360.0;
   let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal;
   //let timeToOfficeIndex = (0.7 * commuteTimePublicTransport + 0.3 * commuteTimePrivateTransport) / 30;
   //salary
   //cost of utilities
+  calculateDistanceMatrix(neighbourhood);
   return (medianHousingIndex); //+ timeToOfficeIndex);
 }
 
