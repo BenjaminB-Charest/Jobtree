@@ -270,9 +270,9 @@ function creerJobDisplay(objetJson) {
   let displayIndex = document.createElement('div');
   displayIndex.className = "index";
 
-  let displayValeurIndex = document.createElement('div');
-  displayValeurIndex.className = "valeurIndex";
-  displayValeurIndex.innerHTML = "20";
+  // let displayValeurIndex = document.createElement('div');
+  // displayValeurIndex.className = "valeurIndex";
+  // displayValeurIndex.innerHTML = "20";
 
   let displayApply = document.createElement('a');
   displayApply.className = "apply";
@@ -289,7 +289,7 @@ function creerJobDisplay(objetJson) {
   displayJobTitle.appendChild(displayLogo);
 
 
-  displayIndex.appendChild(displayValeurIndex);
+  //displayIndex.appendChild(displayValeurIndex);
   displayIndex.appendChild(displayApply);
   displayDescriptionPlusIndex.appendChild(displayDescription);
   displayDescriptionPlusIndex.appendChild(displayIndex);
