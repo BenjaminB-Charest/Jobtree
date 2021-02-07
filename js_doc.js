@@ -337,17 +337,6 @@ function showIndexDisplay(){
   let indexValueTransportation = document.createElement('div');
   indexValueTransportation.className = "indexValueContainer";
   indexValueTransportation.innerHTML = "3";
-
-  
-  // let indexSalary = document.createElement('div');
-  // indexSalary.className = 'indexContainer';
-  // let indexNameSalary = document.createElement('div');
-  // indexNameSalary.className = 'indexNameContainer';
-  // indexNameSalary.innerHTML =  "Index Salary : ";
-  
-  // let indexValueSalary = document.createElement('div');
-  // indexValueSalary.className = "indexValueContainer";
-  // indexValueSalary.innerHTML = "1";
   
   let neighbourhoodNameContainer = document.createElement('div');
   neighbourhoodNameContainer.className = "indexContainer";
