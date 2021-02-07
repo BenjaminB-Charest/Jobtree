@@ -21,7 +21,7 @@
   border-radius: 10px;
 }
 
-.display-job:hover{
+.display-job:hover {
   border: 3px solid red;
   border-radius: 10px;
 }
@@ -62,11 +62,15 @@
   border: green 3px solid;
 }
 
+/* .logo {
+  width: 50%;
+  height: 50%;
+} */
+
 .top-nav-container {
   flex-direction: row;
   width: auto;
   height: auto;
-  background-color: #a8d5db;
 }
 
 .top-nav-search-bar-section {
@@ -77,21 +81,20 @@
 }
 
 .top-nav-filter-section {
-  width: auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  border: 1px solid whitesmoke;
+  padding-left: 2%;
   border-radius: 4px;
   background-color: #00B4CC;
 }
 
 .top-nav-submit-button {
-  padding-bottom: 30px;
+  padding-left: 3%;
+  padding-bottom: 10px;
   float: right;
 }
 
 .city-filter-input {
+  padding-top: 45px;
   padding-left: 50px;
   float: right;
 }
@@ -117,10 +120,12 @@
   border-radius: 2px;
   cursor: pointer;
   position: relative;
+  border-radius: 15px;
 }
 
 
 .job-type-input {
+  padding-top: 40px;
   float: left;
 }
 
@@ -197,11 +202,10 @@
 
 .jobTitle {
   display: flex;
-  
   width: 100%;
 }
 
-img{
+img {
   width: 110px;
   height: 110px;
   border-radius: 15px;
@@ -228,13 +232,15 @@ img{
   width: 70%;
   background-color: lightblue;
   height: auto;
+
+
 }
 
 .description p {
- padding: 0px;
- margin: 0px;
- margin-left: 5px;
- 
+  padding: 0px;
+  margin: 0px;
+  margin-left: 5px;
+
 }
 
 .index {
@@ -248,7 +254,7 @@ img{
   color: black;
   background-color: lightblue;
   font: bold;
-  height: auto; 
+  height: auto;
 
 }
 
@@ -257,7 +263,7 @@ img{
   justify-content: center;
   width: 100%;
   height: auto;
-  
+
 }
 
 .container3 {
@@ -292,7 +298,7 @@ body {
 }
 
 .searchTerm:focus {
-  color: #00B4CC;
+  color: #cc6d00;
 }
 
 .searchButton {
@@ -315,7 +321,7 @@ body {
 
 #jobsHandler {
   width: 70%;
-  
+
   height: 720px;
   overflow-y: auto;
 }
@@ -328,7 +334,6 @@ body {
   height: 60%;
   font-size: 25px;
 }
-
 
 .apply {
   display: flex;
@@ -349,15 +354,15 @@ body {
   opacity: 50%;
   text-decoration: none;
   background-color: #E74C3C;
-  COLOR:white
+  COLOR: white
 }
 
-.displayDescriptionPlusIndex{
+.displayDescriptionPlusIndex {
   display: flex;
   justify-content: center;
   width: 80%;
   /* border-radius: 10px;
   background-color: lightblue; */
   margin: 5px;
-  
+
 }
