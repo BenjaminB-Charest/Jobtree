@@ -14,7 +14,7 @@ function creerJobDisplay(objetJson){
     
   let displayMapsAndINdex = document.getElementById("jobsHandler");
   
-  let displayJobContainer = document.createElement('div');
+  let displayJobContainer = document.createElement('button');
   displayJobContainer.className = "display-job";
 
   let displayJobTitle = document.createElement('div');
@@ -29,16 +29,35 @@ function creerJobDisplay(objetJson){
 
 
   let displayDescription = document.createElement('div');
-  displayDescription. className = "description";
+  displayDescription.className = "description";
+
+  let displayDescriptionPlusIndex = document.createElement('div');
+  displayDescriptionPlusIndex.className = "displayDescriptionPlusIndex";
 
   let displayCompanyName = document.createElement('p');
-  displayCompanyName.innerHTML = "Company Name: " + objetJson.CompanyName;
-  
+  displayCompanyName.innerHTML = objetJson.CompanyName;
+  displayCompanyName.style.marginBottom ="10px";
+  displayCompanyName.style.color ="grey";
+  displayCompanyName.style.fontWeight = "bold";
+
+
   let displayCompanyPosition = document.createElement('p');
-  displayCompanyPosition.innerHTML = "Position: " + objetJson.Position;
+  displayCompanyPosition.innerHTML = objetJson.Position;
+  displayCompanyPosition.style.marginTop = "5px";
+  displayCompanyPosition.style.fontWeight = "bold";
 
   let displayCompanySalary = document.createElement('p');
   displayCompanySalary.innerHTML = "Salary: " + objetJson.Salary;
+  displayCompanySalary.style.color ="grey";
+  displayCompanySalary.style.fontSize = "13px";
+  displayCompanySalary.style.marginBottom = "7px";
+  displayCompanySalary.style.fontWeight = "bold";
+
+  let displayJobType = document.createElement('p');
+  displayJobType.innerHTML = objetJson.Type;
+  displayJobType.style.color ="grey"
+  displayJobType.style.fontSize ="13px";
+  displayJobType.style.fontWeight = "bold";
   
   let displayIndex = document.createElement('div');
   displayIndex.className = "index";
@@ -52,18 +71,24 @@ function creerJobDisplay(objetJson){
   displayApply.innerHTML = "Appliquer";
   displayApply.href = objetJson.URL;
   
-  
-  
-  displayDescription.appendChild(displayCompanyName);
-  displayDescription.appendChild(displayCompanySalary);
   displayDescription.appendChild(displayCompanyPosition);
+  displayDescription.appendChild(displayCompanyName);
+  displayDescription.appendChild(displayJobType);
+  displayDescription.appendChild(displayCompanySalary);
+
   displayLogo.appendChild(displayImg);
+
   displayJobTitle.appendChild(displayLogo);
-  displayJobTitle.appendChild(displayDescription);
+
+
   displayIndex.appendChild(displayValeurIndex);
   displayIndex.appendChild(displayApply);
-  displayJobTitle.appendChild(displayIndex);
+  displayDescriptionPlusIndex.appendChild(displayDescription);
+  displayDescriptionPlusIndex.appendChild(displayIndex);
+  displayJobTitle.appendChild(displayDescriptionPlusIndex);
+
   displayJobContainer.appendChild(displayJobTitle);
+
   displayMapsAndINdex.appendChild(displayJobContainer);
 
 }

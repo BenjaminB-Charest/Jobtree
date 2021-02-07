@@ -21,7 +21,7 @@ function initMap() {
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
     center: montreal,
-    zoom: 12,
+    zoom: 10,
   });
   const request = {
     query: "Polytechnique Montreal",
@@ -91,7 +91,8 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, place) 
 }
 
 // Get the data for the time & distance from the office
-function calculateDistanceMatrix(destination){
+function calculateDistanceMatrix(destination) {
+  let time = 0;
 geocoder = new google.maps.Geocoder();
 serviceDistanceMatrix = new google.maps.DistanceMatrixService()
   serviceDistanceMatrix.getDistanceMatrix(
@@ -108,13 +109,15 @@ serviceDistanceMatrix = new google.maps.DistanceMatrixService()
         alert("Error was: " + status);
       } else {
           const results = response.rows[0].elements;
-          console.log(results[0].distance.text +
-            " in " +
-            results[0].duration.text +
-            "");
+        try {
+          time = results[0].duration.value / 60;
+        } catch(error) {
+          time = 60;
+        }
       }
     }
   );
+  return time;
 }
 
 function deleteMarkers(markersArray) {
@@ -146,18 +149,22 @@ function onSearch(){
 }
 
 function calculateIndex(neighbourhood) {
+  const salary = 60000; // FOR TESTING
   let medianHousingPrice = 0;
   for (var i = 0; i < medianPriceArray.length; i++) { 
     if (neighbourhood === medianPriceArray[i].city)
       medianHousingPrice = medianPriceArray[i].medianPrice;
   }
-  console.log(medianHousingPrice);
   const medianHousingPriceMontreal = 1360.0;
-  let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal;
-  //let timeToOfficeIndex = (0.7 * commuteTimePublicTransport + 0.3 * commuteTimePrivateTransport) / 30;
-  //salary
-  //cost of utilities
-  return (medianHousingIndex); //+ timeToOfficeIndex);
+  const livingCosts = 1069.0;
+  let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal; 
+  console.log("housingIndex:" + medianHousingIndex);
+  let salaryIndex = ((salary / 12) - (medianHousingPrice + livingCosts)) / ((salary / 12) * 0.3); 
+  console.log("salaryIndex:" + salaryIndex);
+  let timeToOfficeIndex = (0.7 * calculateDistanceMatrix(neighbourhood)) / 30;
+  console.log("timeToOfficeIndex:" + timeToOfficeIndex);
+
+  return (medianHousingIndex + salaryIndex + timeToOfficeIndex);
 }
 
 function mapColor(colorIndex) {
