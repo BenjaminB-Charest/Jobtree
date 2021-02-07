@@ -124,20 +124,24 @@
 
 .submit-button {
   float: right;
-  color: #fff;
+  color: white;
   background-color: green;
   outline: none;
-  border: 0;
-  color: #fff;
   padding: 10px 20px;
-  text-transform: uppercase;
   margin-top: 50px;
-  border-radius: 2px;
   cursor: pointer;
   position: relative;
-  border-radius: 15px;
+  border-radius: 10px;
+  border: white 2px solid;
 }
 
+.submit-button:hover{
+  opacity: 70%;
+}
+
+.submit-button:focus{
+  outline: none;
+}
 
 .job-type-input {
   padding-top: 40px;

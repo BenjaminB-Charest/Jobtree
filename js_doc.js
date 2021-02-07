@@ -244,7 +244,7 @@ function creerJobDisplay(objetJson) {
   displayCompanyPosition.style.fontWeight = "bold";
 
   let displayCompanySalary = document.createElement('p');
-  displayCompanySalary.innerHTML = "Salary: " + objetJson.Salary;
+  displayCompanySalary.innerHTML = "Salary : " + objetJson.Salary.toLocaleString('fr-CA', {currency: 'CAD'}) + "$";
   displayCompanySalary.style.color = "grey";
   displayCompanySalary.style.fontSize = "13px";
   displayCompanySalary.style.marginBottom = "7px";
