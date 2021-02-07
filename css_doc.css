@@ -62,11 +62,6 @@
   border: green 3px solid;
 }
 
-/* .logo {
-  width: 50%;
-  height: 50%;
-} */
-
 .top-nav-container {
   flex-direction: row;
   width: auto;
@@ -84,7 +79,7 @@
   display: flex;
   padding-left: 2%;
   border-radius: 4px;
-  background-color: #00B4CC;
+  background-color: #3b8dcf;
 }
 
 .top-nav-submit-button {
@@ -102,7 +97,6 @@
 .jobTitle {
   height: auto;
   display: flex;
-  ;
   width: 100%;
   color: white;
 }
@@ -110,7 +104,7 @@
 .submit-button {
   float: right;
   color: #fff;
-  background-color: #e74c3c;
+  background-color: green;
   outline: none;
   border: 0;
   color: #fff;
@@ -126,20 +120,22 @@
 
 .job-type-input {
   padding-top: 40px;
+  padding-left: 20px;
   float: left;
 }
 
 #job-text {
   color: white;
-  font-weight: bolder;
+  font-size: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-right: 5px;
 }
 
 .job-type-input select {
-  background-color: #3b8dcf;
-  color: white;
+  background-color: white;
+  color: #3b8dcf;
   padding: 12px;
-  width: 250px;
+  width: 150px;
   border: none;
   font-size: 20px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
@@ -148,52 +144,8 @@
   outline: none;
 }
 
-.job-type-input::before {
-  content: "\f13a";
-  font-family: FontAwesome;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20%;
-  height: 100%;
-  text-align: center;
-  font-size: 28px;
-  line-height: 45px;
-  color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
-  pointer-events: none;
-}
-
-.job-type-input:hover::before {
-  color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
 .job-type-input select option {
   padding: 30px;
-}
-
-.city-input {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 70%;
-  border: 0;
-  border-bottom: 2px solid black;
-  outline: 0;
-  font-size: 1.3rem;
-  color: black;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-}
-
-#city-text {
-  color: white;
-  font-weight: bolder;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.position-input {
-  width: 150px;
 }
 
 .submit-button {
@@ -203,6 +155,19 @@
 .jobTitle {
   display: flex;
   width: 100%;
+}
+
+.min-input {
+  background-color: white;
+  color: #3b8dcf;
+  padding: 12px;
+  width: 150px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
 }
 
 img {
@@ -288,7 +253,7 @@ body {
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #00B4CC;
+  border: 3px solid green;
   border-right: none;
   padding: 5px;
   height: 36px;
@@ -298,19 +263,18 @@ body {
 }
 
 .searchTerm:focus {
-  color: #cc6d00;
+  color: black;
 }
 
 .searchButton {
   width: 40px;
   height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  background: green;
   text-align: center;
   color: #fff;
-  border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+  border: none;
 }
 
 /*Resize the wrap to see the search bar change!*/

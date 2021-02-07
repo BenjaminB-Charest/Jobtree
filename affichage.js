@@ -1,6 +1,6 @@
 let jobTypeInput = document.getElementsByClassName('position-input');
 let searchInput = document.getElementsByClassName('searchTerm');
-
+let minSalryInput = document.getElementsByClassName('min-input');
 
 
 function chargerDisplayJobs() {
@@ -8,7 +8,7 @@ function chargerDisplayJobs() {
     .then(response => response.json())
     .then(json => {
       for (const companies of json) {
-        if ((jobTypeInput[0].value == companies.Type || jobTypeInput[0].value == "invalid") && textFund(companies))
+        if ((jobTypeInput[0].value == companies.Type || jobTypeInput[0].value == "invalid") && textFund(companies) && companies.Salary >= minSalryInput[0].value)
           creerJobDisplay(companies);
       }
     });
@@ -25,12 +25,6 @@ function textFund(companie) {
 }
 
 function onSearch() {
-  let searchInput = document.getElementsByClassName('searchTerm');
-  let cityFilterInput = document.getElementsByClassName('city-input');
-  let jobTypeInput = document.getElementsByClassName('position-input');
-  console.log(searchInput[0].value);
-  console.log(cityFilterInput[0].value);
-  console.log(jobTypeInput[0].value);
   let displayMapsAndINdex = document.getElementById("jobsHandler");
   displayMapsAndINdex.innerHTML = "";
   chargerDisplayJobs()
@@ -75,7 +69,7 @@ function creerJobDisplay(objetJson) {
   displayCompanyPosition.style.fontWeight = "bold";
 
   let displayCompanySalary = document.createElement('p');
-  displayCompanySalary.innerHTML = "Salary: " + objetJson.Salary;
+  displayCompanySalary.innerHTML = "Salary: " + objetJson.Salary + " $";
   displayCompanySalary.style.color = "grey";
   displayCompanySalary.style.fontSize = "13px";
   displayCompanySalary.style.marginBottom = "7px";
