@@ -115,6 +115,7 @@ function deleteMarkers(markersArray) {
 
 function addHeatMap() {
   createMarker();
+  showIndexDisplay();
   // Montreal city borders
   initMap();
   dataList = map.data.loadGeoJson("montreal_geojson.geojson");
@@ -297,4 +298,57 @@ function creerJobDisplay(objetJson) {
   displayJobContainer.appendChild(displayJobTitle);
 
   displayMapsAndINdex.appendChild(displayJobContainer);
+}
+
+function showIndexDisplay(){
+  let mapsContainer = document.getElementById('googleMaps');
+  let divIndexes = document.getElementById('divIndexes');
+ 
+  let indexesContainer = document.createElement('div');
+  indexesContainer.className = "indexesContainer";
+  
+  let indexSalary = document.createElement('div');
+  indexSalary.className = 'indexContainer';
+  let indexNameSalary = document.createElement('div');
+  indexNameSalary.className = 'indexNameContainer';
+  indexNameSalary.innerHTML =  "Index Salary : ";
+  
+  let indexHousing = document.createElement('div');
+  indexHousing.className = 'indexContainer';
+  let indexNameHousing = document.createElement('div');
+  indexNameHousing.className = 'indexNameContainer';
+  indexNameHousing.innerHTML = "Index Housing : ";
+  
+  let indexTransportation = document.createElement('div');
+  indexTransportation.className = "indexContainer";
+  let indexNameTransportation = document.createElement('div');
+  indexNameTransportation.className = "indexNameContainer";
+  indexNameTransportation.innerHTML = "Index Transportation : ";
+
+  let indexValueSalary = document.createElement('div');
+  indexValueSalary.className = "indexValueContainer";
+  indexValueSalary.innerHTML = "1";
+
+  let indexValueHousing = document.createElement('div');
+  indexValueHousing.className = "indexValueContainer";
+  indexValueHousing.innerHTML = "2";
+
+  let indexValueTransportation = document.createElement('div');
+  indexValueTransportation.className = "indexValueContainer";
+  indexValueTransportation.innerHTML = "3";
+
+
+
+  indexSalary.appendChild(indexNameSalary);
+  indexSalary.appendChild(indexValueSalary);
+  indexHousing.appendChild(indexNameHousing);
+  indexHousing.appendChild(indexValueHousing);
+  indexTransportation.appendChild(indexNameTransportation);
+  indexTransportation.appendChild(indexValueTransportation);
+  indexesContainer.appendChild(indexSalary);
+  indexesContainer.appendChild(indexHousing);
+  indexesContainer.appendChild(indexTransportation);
+  divIndexes.appendChild(indexesContainer);
+  mapsContainer.appendChild(divIndexes);
+
 }
