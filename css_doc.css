@@ -71,15 +71,13 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
-  margin-top: 30px;
   border: 1px solid whitesmoke;
-  padding: 21px;
   border-radius: 4px;
   background-color: #00B4CC;
 }
 
 .top-nav-submit-button {
-  padding-top: 10px;
+  padding-bottom: 30px;
   float: right;
 }
 
