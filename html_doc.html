@@ -41,41 +41,34 @@
                 <div class = "top-nav-container">
                         <div class="top-nav-search-section">
                                 <div class="search">
-                                   <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                   <input type="text" class="searchTerm" placeholder="What job you looking for?">
                                    <button type="submit" class="searchButton">
                                      <i class="fa fa-search"></i>
                                   </button>
                                 </div>
                         </div>
+                        <div class="top-nav-filter-section">
+                                <form>
+                                        <div class="city-filter-input">
+                                                <label class="omrs-input-underlined" id="city-text">City Filter:</label>
+                                                <input class="city-input" type="input" placeholder="Ex.Montreal">
+                                        </div>
+                                        <div class="job-type-input">
+                                                <label id="job-text">Position Filter:</label>
+                                                <select class="position-input">
+                                                        <option value="invalid">Type of position</option>
+                                                        <option value="Internship">Internship</option>
+                                                        <option value="Full-time">Full-Time</option>
+                                                        <option valie="Part-time">Part-Time</option>
+                                                </select>
+                                        </div>
+                                </form>
+                                <div type="button" class="top-nav-submit-button">
+                                        <button class="submit-button"onclick="onSearch()">Search</button>
+                                </div>
+                        </div>
                 </div>
 
-                <div class="top-nav-submit-button">
-                        <button class="submit-button"onclick="onSearch()">Search</button>
-                </div>
-
-                <div class="top-nav-filter-section">
-                        <form>
-                                <div class="price-range-input">
-                                        <label>Salary range:</label>
-                                        <input type="range" class="price-input" min="30000" max="200000"></input>
-                                </div>
-                                <div class="city-filter-input">
-                                        <label class="omrs-input-underlined">City Filter:</label>
-                                        <input required>
-                                        
-                                        <input class="city-input" type="text" placeholder="Ex.Montreal">
-                                </div>
-                                <div class="job-type-input">
-                                        <label>Position Filter:</label>
-                                        <select class="position-input">
-                                                <option value="invalid">Type of position</option>
-                                                <option value="internship">Internship</option>
-                                                <option value="full-time">Full-Time</option>
-                                                <option valie="part-time">Part-Time</option>
-                                        </select>
-                                </div>
-                        </form>
-                </div>
                 <div class = "mapsAndIndex">
                         <div  id = "jobsHandler"  >
                 </div>

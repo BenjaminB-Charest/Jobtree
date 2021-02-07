@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&subset=greek-ext');
 
 #map {
   height: 400px;
@@ -53,22 +54,20 @@
 
 .top-nav-container {
   flex-direction: row;
-  width: 100%;
+  width: auto;
   height: auto;
-  background-color: #0b7988;
+  background-color: #a8d5db;
 }
 
-.top-nav-container .top-nav-search-bar-section {
+.top-nav-search-bar-section {
   float: left;
   width: auto;
   margin-left: 20px;
   height: auto;
 }
 
-.top-nav-container .top-nav-filter-section {
+.top-nav-filter-section {
   width: auto;
-  float: right;
-
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
@@ -76,18 +75,16 @@
   border: 1px solid whitesmoke;
   padding: 21px;
   border-radius: 4px;
+  background-color: #00B4CC;
 }
 
-.top-nav-container .top-nav-submit-button {
-  width: auto;
+.top-nav-submit-button {
+  padding-top: 10px;
   float: right;
 }
 
-.top-nav-filter-section .price-range-input {
-  float: right;
-}
-
-.top-nav-filter-section .city-filter-input {
+.city-filter-input {
+  padding-left: 50px;
   float: right;
 }
 
@@ -99,17 +96,87 @@
   color: white;
 }
 
-.top-nav-filter-section .submit-button {
+.submit-button {
   float: right;
+  color: #fff;
+  background-color: #e74c3c;
+  outline: none;
+  border: 0;
+  color: #fff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin-top: 50px;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
 }
 
 
-.top-nav-filter-section .job-type-input {
-  float: right;
+.job-type-input {
+  float: left;
+}
+
+#job-text {
+  color: white;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.job-type-input select {
+  background-color: #3b8dcf;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.job-type-input::before {
+  content: "\f13a";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.job-type-input:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.job-type-input select option {
+  padding: 30px;
 }
 
 .city-input {
-  width: 150px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 70%;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+#city-text {
+  color: white;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .position-input {
@@ -186,7 +253,6 @@ body {
 
 .search {
   width: 100%;
-  position: relative;
   display: flex;
 }
 
@@ -219,7 +285,8 @@ body {
 
 /*Resize the wrap to see the search bar change!*/
 .top-nav-search-section {
-  width: 30%;
+  height: 100%;
+  width: 30;
 }
 
 #jobsHandler {
@@ -229,17 +296,17 @@ body {
   overflow-y: auto;
 }
 
-.valeurIndex{
+.valeurIndex {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 80%;
   height: 60%;
-  font-size: 25px;  
+  font-size: 25px;
 }
 
 
-.apply{
+.apply {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,7 +319,7 @@ body {
   font-size: 18px;
 }
 
-.apply:hover{
+.apply:hover {
   opacity: 70%;
   text-decoration: none;
 }
