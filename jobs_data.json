@@ -142,5 +142,14 @@
         "Image": "assets/iperceptions.png",
         "Type": "Full-time",
         "URL": "https://ca.indeed.com/jobs?q=software%20engineer&l=Montr%C3%A9al%2C%20QC&vjk=c25ef29d42c17dcf&advn=4595264252674249"
+    },
+    {
+        "CompanyName": "Environment and Climate Change Quebec",
+        "Position": "Application Programmer Team Lead",
+        "Salary":95000,
+        "Address": "2121 Rte Transcanadienne, Dorval, QC H9P 1J3",
+        "Image": "assets/canada.jpg",
+        "Type": "Full-time",
+        "URL": "https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page1800?toggleLanguage=en&poster=1531152"
     }
 ]
