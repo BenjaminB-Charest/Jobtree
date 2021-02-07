@@ -52,11 +52,15 @@
   border: green 3px solid;
 }
 
+/* .logo {
+  width: 50%;
+  height: 50%;
+} */
+
 .top-nav-container {
   flex-direction: row;
   width: auto;
   height: auto;
-  background-color: #a8d5db;
 }
 
 .top-nav-search-bar-section {
@@ -67,21 +71,20 @@
 }
 
 .top-nav-filter-section {
-  width: auto;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
-  border: 1px solid whitesmoke;
+  padding-left: 2%;
   border-radius: 4px;
   background-color: #00B4CC;
 }
 
 .top-nav-submit-button {
-  padding-bottom: 30px;
+  padding-left: 3%;
+  padding-bottom: 10px;
   float: right;
 }
 
 .city-filter-input {
+  padding-top: 45px;
   padding-left: 50px;
   float: right;
 }
@@ -107,10 +110,12 @@
   border-radius: 2px;
   cursor: pointer;
   position: relative;
+  border-radius: 15px;
 }
 
 
 .job-type-input {
+  padding-top: 40px;
   float: left;
 }
 
@@ -187,7 +192,6 @@
 
 .jobTitle {
   display: flex;
-  ;
   width: 100%;
 }
 
@@ -266,7 +270,7 @@ body {
 }
 
 .searchTerm:focus {
-  color: #00B4CC;
+  color: #cc6d00;
 }
 
 .searchButton {
@@ -301,23 +305,4 @@ body {
   width: 80%;
   height: 60%;
   font-size: 25px;
-}
-
-
-.apply {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 40%;
-  background-color: cyan;
-  margin: 5px;
-  text-decoration: none;
-  border-radius: 10px;
-  font-size: 18px;
-}
-
-.apply:hover {
-  opacity: 70%;
-  text-decoration: none;
 }
