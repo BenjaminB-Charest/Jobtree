@@ -223,7 +223,6 @@ function creerJobDisplay(objetJson) {
     currentAddress = objetJson.Address;
     parentNode= document.getElementById('divIndexes');
     parentNode.innerHTML = '';
-    setTimeout(() => { }, 15000);
   });
 
 
