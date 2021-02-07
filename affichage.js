@@ -43,6 +43,8 @@ function creerJobDisplay(objetJson) {
   let displayMapsAndINdex = document.getElementById("jobsHandler");
 
   let displayJobContainer = document.createElement('div');
+  
+  let displayJobContainer = document.createElement('button');
   displayJobContainer.className = "display-job";
 
   let displayJobTitle = document.createElement('div');
