@@ -143,7 +143,7 @@ function calculateIndex(neighbourhood) {
   console.log("medianHousing: " + medianHousingIndex);
   let salaryIndex = ((currentSalary / 12) - (medianHousingPrice + livingCosts)) / ((currentSalary / 12) * 0.3);
   console.log("salaryIndex: " + salaryIndex);
-  let timeToOfficeIndex = 30 / (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]);
+  let timeToOfficeIndex = 45 / (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]);
   console.log("timeToOfficeIndex:" + timeToOfficeIndex);
   var result = medianHousingIndex + salaryIndex + timeToOfficeIndex;
   console.log("total: " + result);
