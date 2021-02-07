@@ -153,22 +153,24 @@ function calculateIndex(neighbourhood) {
   const medianHousingPrice = getMedianPrice(neighbourhood);
   const medianHousingPriceMontreal = 1360.0;
   const livingCosts = 1069.0;
-  let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal; 
+  let medianHousingIndex = medianHousingPriceMontreal / medianHousingPrice; 
   console.log("medianHousing: " + medianHousingIndex);
   let salaryIndex = ((currentSalary / 12) - (medianHousingPrice + livingCosts)) / ((currentSalary / 12) * 0.3); 
-  console.log("salaryINdex: " + salaryIndex);
-  let timeToOfficeIndex = (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]) / 30;
+  console.log("salaryIndex: " + salaryIndex);
+  let timeToOfficeIndex =  30 / (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]) ;
   console.log("timeToOfficeIndex:" + timeToOfficeIndex);
+  var result = medianHousingIndex + salaryIndex + timeToOfficeIndex;
+  console.log("total: " + result);
   return (medianHousingIndex + salaryIndex + timeToOfficeIndex);
 }
 
 function mapColor(colorIndex) {
-  if (colorIndex < 0.75)
-    return "rgba(11,156,49,1)"
-  else if (0.75 <= colorIndex < 1.0) 
-    return "rgba(240,239,136,1)";
+  if (colorIndex > 4.3)
+    return "rgba(11,156,49,1)" // green
+  else if ( colorIndex > 3.5) 
+    return "rgba(255,215,0,1)"; // orange
   else
-    return "rgba(255,0,0,1)";
+    return "rgba(255,0,0,1)"; // red
 }
 
 function parseHousingJSON() {
@@ -225,6 +227,7 @@ function creerJobDisplay(objetJson) {
       calculateDistanceMatrix(medianPriceArray[i].city, objetJson.Address, "DRIVING");
     }
     currentSalary = objetJson.Salary;
+    setTimeout(() => { }, 5000);
   });
 
   displayJobContainer.className = "display-job";
