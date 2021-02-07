@@ -128,10 +128,9 @@ function addHeatMap() {
   // Montreal city borders
   map.data.loadGeoJson("montreal_geojson.geojson");
   map.data.setStyle((feature) => {
-    calculateIndex(feature.getProperty("NOM"));
-    console.log(feature.getProperty("NOM"));
+  color = mapColor(calculateIndex(feature.getProperty("NOM"))); 
   return /**  @type {google.maps.Data.StyleOptions} */ {
-      fillColor: feature.getProperty("color"),
+      fillColor: color,
       strokeWeight: 1,
     };
   });
@@ -156,7 +155,18 @@ function calculateIndex(neighbourhood) {
   const medianHousingPriceMontreal = 1360.0;
   let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal;
   //let timeToOfficeIndex = (0.7 * commuteTimePublicTransport + 0.3 * commuteTimePrivateTransport) / 30;
+  //salary
+  //cost of utilities
   return (medianHousingIndex); //+ timeToOfficeIndex);
+}
+
+function mapColor(colorIndex) {
+  if (colorIndex < 0.75)
+    return "rgba(11,156,49,1)"
+  else if (0.75 <= colorIndex < 1.0) 
+    return "rgba(240,239,136,1)";
+  else
+    return "rgba(255,0,0,1)";
 }
 
 function parseHousingJSON() {
