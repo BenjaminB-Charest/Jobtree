@@ -37,25 +37,6 @@ function initMap() {
   });
 }
 
-// Connects the search button to the input
-function test_func() {
-  deleteMarkers(markersArray);
-   var content = document.getElementById("test").value;
-   servicePlaces = new google.maps.places.PlacesService(map);
-   var request = {
-    query: content,
-    fields: ['name', 'geometry'],
-  };
-
-  service.findPlaceFromQuery(request, function(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      map.setCenter(results[0].geometry.location);
-    }
-  });       
-  calculateAndDisplayRoute(directionsService, directionsRenderer, content);
-  calculateDistanceMatrix(content);
-}
-
 // Adds the marker to the map
 function createMarker(place) {
   const marker = new google.maps.Marker({
@@ -227,6 +208,7 @@ function creerJobDisplay(objetJson) {
       calculateDistanceMatrix(medianPriceArray[i].city, objetJson.Address, "DRIVING");
     }
     currentSalary = objetJson.Salary;
+    createMarker(objetJson.Address);
     setTimeout(() => { }, 5000);
   });
 
