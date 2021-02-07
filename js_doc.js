@@ -12,6 +12,8 @@ let medianPriceArray = [];
 let distanceMatrixArray = [];
 let dataList = [];
 let currentSalary = 0;
+let marker;
+let currentAddress = "";
 
 // Initializes the map and associated services
 function initMap() {
@@ -37,35 +39,19 @@ function initMap() {
   });
 }
 
-// Connects the search button to the input
-function test_func() {
-  deleteMarkers(markersArray);
-  var content = document.getElementById("test").value;
-  servicePlaces = new google.maps.places.PlacesService(map);
-  var request = {
-    query: content,
-    fields: ['name', 'geometry'],
-  };
-
-  service.findPlaceFromQuery(request, function (results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      map.setCenter(results[0].geometry.location);
-    }
-  });
-  calculateAndDisplayRoute(directionsService, directionsRenderer, content);
-  calculateDistanceMatrix(content);
-}
-
 // Adds the marker to the map
-function createMarker(place) {
-  const marker = new google.maps.Marker({
-    map,
-    position: place.geometry.location,
-  });
-  markersArray.push(marker);
-  google.maps.event.addListener(marker, "click", () => {
-    infowindow.setContent(place.name);
-    infowindow.open(map);
+function createMarker() {
+  geocoder.geocode({ 'address': currentAddress }, function (results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      if (marker)
+        marker.setMap(null);
+      marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location,
+        draggable: true
+      });
+    }
   });
 }
 
@@ -128,7 +114,7 @@ function deleteMarkers(markersArray) {
 }
 
 function addHeatMap() {
-
+  createMarker();
   // Montreal city borders
   initMap();
   dataList = map.data.loadGeoJson("montreal_geojson.geojson");
@@ -153,22 +139,24 @@ function calculateIndex(neighbourhood) {
   const medianHousingPrice = getMedianPrice(neighbourhood);
   const medianHousingPriceMontreal = 1360.0;
   const livingCosts = 1069.0;
-  let medianHousingIndex = medianHousingPrice / medianHousingPriceMontreal;
+  let medianHousingIndex = medianHousingPriceMontreal / medianHousingPrice;
   console.log("medianHousing: " + medianHousingIndex);
   let salaryIndex = ((currentSalary / 12) - (medianHousingPrice + livingCosts)) / ((currentSalary / 12) * 0.3);
-  console.log("salaryINdex: " + salaryIndex);
-  let timeToOfficeIndex = (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]) / 30;
+  console.log("salaryIndex: " + salaryIndex);
+  let timeToOfficeIndex = 30 / (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]);
   console.log("timeToOfficeIndex:" + timeToOfficeIndex);
+  var result = medianHousingIndex + salaryIndex + timeToOfficeIndex;
+  console.log("total: " + result);
   return (medianHousingIndex + salaryIndex + timeToOfficeIndex);
 }
 
 function mapColor(colorIndex) {
-  if (colorIndex < 0.75)
-    return "rgba(11,156,49,1)"
-  else if (0.75 <= colorIndex < 1.0)
-    return "rgba(240,239,136,1)";
+  if (colorIndex > 4.3)
+    return "rgba(11,156,49,1)" // green
+  else if (colorIndex > 3.5)
+    return "rgba(255,215,0,1)"; // orange
   else
-    return "rgba(255,0,0,1)";
+    return "rgba(255,0,0,1)"; // red
 }
 
 function parseHousingJSON() {
@@ -231,6 +219,8 @@ function creerJobDisplay(objetJson) {
     }
     currentSalary = objetJson.Salary;
     displayJobContainer.style.border = '3px solid red'
+    currentAddress = objetJson.Address;
+    setTimeout(() => { }, 15000);
   });
 
 
