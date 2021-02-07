@@ -115,7 +115,6 @@ function deleteMarkers(markersArray) {
 
 function addHeatMap() {
   createMarker();
-  showIndexDisplay();
   // Montreal city borders
   initMap();
   dataList = map.data.loadGeoJson("montreal_geojson.geojson");
@@ -148,6 +147,7 @@ function calculateIndex(neighbourhood) {
   console.log("timeToOfficeIndex:" + timeToOfficeIndex);
   var result = medianHousingIndex + salaryIndex + timeToOfficeIndex;
   console.log("total: " + result);
+  showIndexDisplay(medianHousingIndex, salaryIndex, timeToOfficeIndex,neighbourhood);
   return (medianHousingIndex + salaryIndex + timeToOfficeIndex);
 }
 
@@ -221,6 +221,8 @@ function creerJobDisplay(objetJson) {
     currentSalary = objetJson.Salary;
     displayJobContainer.style.border = '3px solid red'
     currentAddress = objetJson.Address;
+    parentNode= document.getElementById('divIndexes');
+    parentNode.innerHTML = '';
     setTimeout(() => { }, 15000);
   });
 
@@ -300,7 +302,16 @@ function creerJobDisplay(objetJson) {
   displayMapsAndINdex.appendChild(displayJobContainer);
 }
 
-function showIndexDisplay(){
+function decideColor(index,node) {
+  if (index > 1.5)
+    node.style.backgroundColor = "rgba(11,156,49,1)"; // green
+  else if (index > 1.0)
+    node.style.backgroundColor ="rgba(255,215,0,1)"; // orange
+  else
+    node.style.backgroundColor ="rgba(255,0,0,1)"; // red
+}
+
+function showIndexDisplay(medianHousingIndex, salaryIndex, timeToOfficeIndex, neighbourhood) {
   let mapsContainer = document.getElementById('googleMaps');
   let divIndexes = document.getElementById('divIndexes');
  
@@ -328,16 +339,19 @@ function showIndexDisplay(){
 
   let indexValueSalary = document.createElement('div');
   indexValueSalary.className = "indexValueContainer";
-  indexValueSalary.innerHTML = "1";
+  indexValueSalary.innerHTML = medianHousingIndex.toFixed(2) + "";
+  decideColor(medianHousingIndex, indexValueSalary);
 
   let indexValueHousing = document.createElement('div');
   indexValueHousing.className = "indexValueContainer";
-  indexValueHousing.innerHTML = "2";
+  indexValueHousing.innerHTML =  salaryIndex.toFixed(2) +"";
+  decideColor(salaryIndex, indexValueHousing);
 
   let indexValueTransportation = document.createElement('div');
   indexValueTransportation.className = "indexValueContainer";
-  indexValueTransportation.innerHTML = "3";
-  
+  indexValueTransportation.innerHTML = timeToOfficeIndex.toFixed(2) +"";
+  decideColor(timeToOfficeIndex, indexValueTransportation);
+
   let neighbourhoodNameContainer = document.createElement('div');
   neighbourhoodNameContainer.className = "indexContainer";
   let neighbourhoodLeft = document.createElement('div');
@@ -346,8 +360,9 @@ function showIndexDisplay(){
 
   let neighbourhoodName = document.createElement('div');
   neighbourhoodName.className ="indexValueContainer";
-  neighbourhoodName.innerHTML = "Ahunstic";
-
+  neighbourhoodName.innerHTML = neighbourhood;
+  neighbourhoodName.style.fontSize = '15px';
+  
   neighbourhoodNameContainer.appendChild(neighbourhoodLeft);
   neighbourhoodNameContainer.appendChild(neighbourhoodName);
   indexSalary.appendChild(indexNameSalary);
