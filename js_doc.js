@@ -315,6 +315,7 @@ function showIndexDisplay(){
   
   let indexHousing = document.createElement('div');
   indexHousing.className = 'indexContainer';
+  
   let indexNameHousing = document.createElement('div');
   indexNameHousing.className = 'indexNameContainer';
   indexNameHousing.innerHTML = "Index Housing : ";
@@ -337,14 +338,36 @@ function showIndexDisplay(){
   indexValueTransportation.className = "indexValueContainer";
   indexValueTransportation.innerHTML = "3";
 
+  
+  // let indexSalary = document.createElement('div');
+  // indexSalary.className = 'indexContainer';
+  // let indexNameSalary = document.createElement('div');
+  // indexNameSalary.className = 'indexNameContainer';
+  // indexNameSalary.innerHTML =  "Index Salary : ";
+  
+  // let indexValueSalary = document.createElement('div');
+  // indexValueSalary.className = "indexValueContainer";
+  // indexValueSalary.innerHTML = "1";
+  
+  let neighbourhoodNameContainer = document.createElement('div');
+  neighbourhoodNameContainer.className = "indexContainer";
+  let neighbourhoodLeft = document.createElement('div');
+  neighbourhoodLeft.className = "indexNameContainer";
+  neighbourhoodLeft.innerHTML = "Neighbourhood : ";
 
+  let neighbourhoodName = document.createElement('div');
+  neighbourhoodName.className ="indexValueContainer";
+  neighbourhoodName.innerHTML = "Ahunstic";
 
+  neighbourhoodNameContainer.appendChild(neighbourhoodLeft);
+  neighbourhoodNameContainer.appendChild(neighbourhoodName);
   indexSalary.appendChild(indexNameSalary);
   indexSalary.appendChild(indexValueSalary);
   indexHousing.appendChild(indexNameHousing);
   indexHousing.appendChild(indexValueHousing);
   indexTransportation.appendChild(indexNameTransportation);
   indexTransportation.appendChild(indexValueTransportation);
+  indexesContainer.appendChild(neighbourhoodNameContainer);
   indexesContainer.appendChild(indexSalary);
   indexesContainer.appendChild(indexHousing);
   indexesContainer.appendChild(indexTransportation);
