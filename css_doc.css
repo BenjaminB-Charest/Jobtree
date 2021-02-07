@@ -14,8 +14,9 @@
   width: 100%;
   height: auto;
   padding: 5px;
-
+  margin-top: 15px;
   border: 3px solid black;
+  border-radius: 10px;
 }
 
 
@@ -191,16 +192,16 @@
   width: 100%;
 }
 
-img {
-  width: 100px;
-  height: 100px;
+img{
+  width: 110px;
+  height: 110px;
+  border-radius: 15px;
 }
 
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-
   width: 25%;
   height: auto;
   color: white;
@@ -208,15 +209,23 @@ img {
 
 .description {
   display: flex;
-  height: auto;
   justify-self: start;
   flex-direction: column;
-  background-color: purple;
-  width: 50%;
+  border: white solid 3px;
+  border-radius: 15px;
+  color: black;
+  width: 70%;
+  background-color: lightblue;
+  height: auto;
+  
+
 }
 
 .description p {
-  margin: 10px;
+ padding: 0px;
+ margin: 0px;
+ margin-left: 5px;
+ 
 }
 
 .index {
@@ -225,7 +234,13 @@ img {
   align-items: center;
   flex-direction: column;
   width: 25%;
-  background-color: green;
+  border: white solid 3px;
+  border-radius: 15px;
+  color: black;
+  background-color: lightblue;
+  font: bold;
+  height: auto; 
+
 }
 
 .container2 {
@@ -309,15 +324,27 @@ body {
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 40%;
-  background-color: cyan;
+  height: 30%;
+  background-color: white;
   margin: 5px;
   text-decoration: none;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 15px;
+  box-shadow: 5px 5px 5px #888888;
 }
 
 .apply:hover {
   opacity: 70%;
   text-decoration: none;
+  background-color: #7076ff;
+}
+
+.displayDescriptionPlusIndex{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  /* border-radius: 10px;
+  background-color: lightblue; */
+  margin: 5px;
+  
 }
