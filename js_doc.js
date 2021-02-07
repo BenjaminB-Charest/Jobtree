@@ -247,8 +247,8 @@ function creerJobDisplay(objetJson) {
   let displayCompanyName = document.createElement('p');
   displayCompanyName.innerHTML = objetJson.CompanyName;
   displayCompanyName.style.marginBottom = "10px";
-  displayCompanyName.style.color = "grey";
-  displayCompanyName.style.fontWeight = "bold";
+  displayCompanyName.style.color = "black";
+  displayCompanyName.style.fontWeight = "";
 
 
   let displayCompanyPosition = document.createElement('p');

@@ -412,9 +412,11 @@ body {
   border-radius: 10px;
   margin: 5px;
   background-color: black;
-  width: 30%;
+  width: 40%;
   height: auto;
   justify-content: center;
   align-items: center;
   color: white;
+  flex-wrap: wrap;
+  margin: 5px;
 }
