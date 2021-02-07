@@ -8,7 +8,7 @@ function chargerDisplayJobs() {
     .then(response => response.json())
     .then(json => {
       for (const companies of json) {
-        if (jobTypeInput[0].value == companies.Type || jobTypeInput[0].value == "invalid" && textFund(companies))
+        if ((jobTypeInput[0].value == companies.Type || jobTypeInput[0].value == "invalid") && textFund(companies))
           creerJobDisplay(companies);
       }
     });
@@ -42,8 +42,6 @@ function creerJobDisplay(objetJson) {
 
   let displayMapsAndINdex = document.getElementById("jobsHandler");
 
-  let displayJobContainer = document.createElement('div');
-  
   let displayJobContainer = document.createElement('button');
   displayJobContainer.className = "display-job";
 
