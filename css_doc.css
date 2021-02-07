@@ -21,11 +21,6 @@
   border-radius: 10px;
 }
 
-.display-job:hover {
-  border: 3px solid red;
-  border-radius: 10px;
-}
-
 .heatMap{
   display: flex;
   justify-content: center;

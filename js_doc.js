@@ -12,6 +12,8 @@ let medianPriceArray = [];
 let distanceMatrixArray = [];
 let dataList = [];
 let currentSalary = 0;
+let marker;
+let currentAddress = "";
 
 // Initializes the map and associated services
 function initMap() {
@@ -38,15 +40,18 @@ function initMap() {
 }
 
 // Adds the marker to the map
-function createMarker(place) {
-  const marker = new google.maps.Marker({
-    map,
-    position: place.geometry.location,
-  });
-  markersArray.push(marker);
-  google.maps.event.addListener(marker, "click", () => {
-    infowindow.setContent(place.name);
-    infowindow.open(map);
+function createMarker() {
+  geocoder.geocode({ 'address': currentAddress }, function (results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      if (marker)
+        marker.setMap(null);
+      marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location,
+        draggable: true
+      });
+    }
   });
 }
 
@@ -74,9 +79,9 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, place) 
 }
 
 // Get the data for the time & distance from the office
-function calculateDistanceMatrix(destination,office_location,mode){
-geocoder = new google.maps.Geocoder();
-serviceDistanceMatrix = new google.maps.DistanceMatrixService()
+function calculateDistanceMatrix(destination, office_location, mode) {
+  geocoder = new google.maps.Geocoder();
+  serviceDistanceMatrix = new google.maps.DistanceMatrixService()
   serviceDistanceMatrix.getDistanceMatrix(
     {
       origins: [office_location],
@@ -92,8 +97,8 @@ serviceDistanceMatrix = new google.maps.DistanceMatrixService()
       } else {
         const results = response.rows[0].elements;
         try {
-          distanceMatrixArray.push( results[0].duration.value / 60);
-        } catch(error) {
+          distanceMatrixArray.push(results[0].duration.value / 60);
+        } catch (error) {
           distanceMatrixArray.push(60);
         }
       }
@@ -109,21 +114,22 @@ function deleteMarkers(markersArray) {
 }
 
 function addHeatMap() {
+  createMarker();
   showIndexDisplay();
   // Montreal city borders
   initMap();
   dataList = map.data.loadGeoJson("montreal_geojson.geojson");
   map.data.setStyle((feature) => {
     color = mapColor(calculateIndex(feature.getProperty("NOM")));
-  return /**  @type {google.maps.Data.StyleOptions} */ {
+    return /**  @type {google.maps.Data.StyleOptions} */ {
       fillColor: color,
       strokeWeight: 1,
     };
   });
 }
 function getMedianPrice(neighbourhood) {
-  let medianHousingPrice = 0.0; 
-  for (var i = 0; i < medianPriceArray.length; i++) { 
+  let medianHousingPrice = 0.0;
+  for (var i = 0; i < medianPriceArray.length; i++) {
     if (neighbourhood === medianPriceArray[i].city)
       medianHousingPrice = medianPriceArray[i].medianPrice;
   }
@@ -134,11 +140,11 @@ function calculateIndex(neighbourhood) {
   const medianHousingPrice = getMedianPrice(neighbourhood);
   const medianHousingPriceMontreal = 1360.0;
   const livingCosts = 1069.0;
-  let medianHousingIndex = medianHousingPriceMontreal / medianHousingPrice; 
+  let medianHousingIndex = medianHousingPriceMontreal / medianHousingPrice;
   console.log("medianHousing: " + medianHousingIndex);
-  let salaryIndex = ((currentSalary / 12) - (medianHousingPrice + livingCosts)) / ((currentSalary / 12) * 0.3); 
+  let salaryIndex = ((currentSalary / 12) - (medianHousingPrice + livingCosts)) / ((currentSalary / 12) * 0.3);
   console.log("salaryIndex: " + salaryIndex);
-  let timeToOfficeIndex =  30 / (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]) ;
+  let timeToOfficeIndex = 45 / (0.7 * distanceMatrixArray[transportIndex++] + 0.3 * distanceMatrixArray[transportIndex++]);
   console.log("timeToOfficeIndex:" + timeToOfficeIndex);
   var result = medianHousingIndex + salaryIndex + timeToOfficeIndex;
   console.log("total: " + result);
@@ -148,7 +154,7 @@ function calculateIndex(neighbourhood) {
 function mapColor(colorIndex) {
   if (colorIndex > 4.3)
     return "rgba(11,156,49,1)" // green
-  else if ( colorIndex > 3.5) 
+  else if (colorIndex > 3.5)
     return "rgba(255,215,0,1)"; // orange
   else
     return "rgba(255,0,0,1)"; // red
@@ -202,17 +208,22 @@ function creerJobDisplay(objetJson) {
   let displayMapsAndINdex = document.getElementById("jobsHandler");
 
   let displayJobContainer = document.createElement('button');
+  displayJobContainer.className = "display-job";
   displayJobContainer.addEventListener("click", () => {
     for (let i = 0; i < medianPriceArray.length; i++) {
       calculateDistanceMatrix(medianPriceArray[i].city, objetJson.Address, "TRANSIT");
       calculateDistanceMatrix(medianPriceArray[i].city, objetJson.Address, "DRIVING");
     }
+    let jobs = document.getElementsByClassName('display-job');
+    for (let i = 0; i < jobs.length; i++) {
+      jobs[i].style.border = '3px solid black';
+    }
     currentSalary = objetJson.Salary;
-    createMarker(objetJson.Address);
-    setTimeout(() => { }, 5000);
+    displayJobContainer.style.border = '3px solid red'
+    currentAddress = objetJson.Address;
+    setTimeout(() => { }, 15000);
   });
 
-  displayJobContainer.className = "display-job";
 
   let displayJobTitle = document.createElement('div');
   displayJobTitle.className = "jobTitle";
@@ -244,7 +255,7 @@ function creerJobDisplay(objetJson) {
   displayCompanyPosition.style.fontWeight = "bold";
 
   let displayCompanySalary = document.createElement('p');
-  displayCompanySalary.innerHTML = "Salary : " + objetJson.Salary.toLocaleString('fr-CA', {currency: 'CAD'}) + "$";
+  displayCompanySalary.innerHTML = "Salary : " + objetJson.Salary.toLocaleString('fr-CA', { currency: 'CAD' }) + "$";
   displayCompanySalary.style.color = "grey";
   displayCompanySalary.style.fontSize = "13px";
   displayCompanySalary.style.marginBottom = "7px";
@@ -265,7 +276,7 @@ function creerJobDisplay(objetJson) {
 
   let displayApply = document.createElement('a');
   displayApply.className = "apply";
-  displayApply.innerHTML = "Appliquer";
+  displayApply.innerHTML = "Details";
   displayApply.href = objetJson.URL;
 
   displayDescription.appendChild(displayCompanyPosition);
@@ -292,8 +303,7 @@ function creerJobDisplay(objetJson) {
 function showIndexDisplay(){
   let mapsContainer = document.getElementById('googleMaps');
   let divIndexes = document.getElementById('divIndexes');
-  let heapMapButton = document.getElementById('heatMapButton');
-  
+ 
   let indexesContainer = document.createElement('div');
   indexesContainer.className = "indexesContainer";
   
@@ -326,6 +336,7 @@ function showIndexDisplay(){
   let indexValueTransportation = document.createElement('div');
   indexValueTransportation.className = "indexValueContainer";
   indexValueTransportation.innerHTML = "3";
+
 
 
   indexSalary.appendChild(indexNameSalary);
