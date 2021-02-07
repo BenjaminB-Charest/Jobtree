@@ -12,6 +12,8 @@ let medianPriceArray = [];
 let distanceMatrixArray = [];
 let dataList = [];
 let currentSalary = 0;
+let marker;
+let currentAddress = "";
 
 // Initializes the map and associated services
 function initMap() {
@@ -38,15 +40,18 @@ function initMap() {
 }
 
 // Adds the marker to the map
-function createMarker(place) {
-  const marker = new google.maps.Marker({
-    map,
-    position: place.geometry.location,
-  });
-  markersArray.push(marker);
-  google.maps.event.addListener(marker, "click", () => {
-    infowindow.setContent(place.name);
-    infowindow.open(map);
+function createMarker() {
+  geocoder.geocode({ 'address': currentAddress }, function (results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      if (marker)
+        marker.setMap(null);
+      marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location,
+        draggable: true
+      });
+    }
   });
 }
 
@@ -109,7 +114,7 @@ function deleteMarkers(markersArray) {
 }
 
 function addHeatMap() {
-  
+  createMarker();
   // Montreal city borders
   initMap();
   dataList = map.data.loadGeoJson("montreal_geojson.geojson");
@@ -208,8 +213,8 @@ function creerJobDisplay(objetJson) {
       calculateDistanceMatrix(medianPriceArray[i].city, objetJson.Address, "DRIVING");
     }
     currentSalary = objetJson.Salary;
-    createMarker(objetJson.Address);
-    setTimeout(() => { }, 5000);
+    currentAddress = objetJson.Address;
+    setTimeout(() => { }, 15000);
   });
 
   displayJobContainer.className = "display-job";
