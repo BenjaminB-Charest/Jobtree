@@ -1,0 +1,155 @@
+[
+    {
+        "CompanyName": "Lyft",
+        "Position": "Software Engineer",
+        "Salary": 100000,
+        "Address": "416 Boulevard de Maisonneuve O, Montréal, QC H3A 1L2",
+        "Image": "assets/Lyft.png",
+        "Type": "Full-time",
+        "URL": "https://boards.greenhouse.io/lyft/jobs/4898221002?gh_jid=4898221002"
+    },
+    {
+        "CompanyName": "Desjardins",
+        "Position": "Analyste-programmeur(se) - QRM",
+        "Salary": 70000,
+        "Address": "1050, Côte du Beaver Hall Montréal",
+        "Image": "assets/Desjardins.jpg",
+        "Type": "Full-time",
+        "URL": "https://desjardins.wd10.myworkdayjobs.com/fr-CA/Desjardins/job/Montral/Analyste-programmeur--se----QRM_R2018244-2?"
+    },
+    {
+        "CompanyName": "Giro",
+        "Position": "Analyste-programmeur C++",
+        "Salary": 65000,
+        "Address": "75 Rue de Port-Royal E, Montreal, QC H3L 3T1, Canada",
+        "Image": "assets/Giro.jpg",
+        "Type": "Full-time",
+        "URL": "https://www.jobillico.com/fr/offre-d-emploi/giro-inc/analyste-programmeur-c-/5738035?ji_visitsrc=123&ccuid=29483618857"
+    },
+    {
+        "CompanyName": "RBC",
+        "Position": "Software Developer, Summer 2021 Student Opportunities",
+        "Salary": 55000,
+        "Address": "1 Place Ville-Marie, Downtown Montreal, Montreal, QC H3B, Canada",
+        "Image": "assets/RBC.jpg",
+        "Type": "Internship",
+        "URL": "https://jobs.rbc.com/ca/en/job/RBCAA0088295616EXTERNALENCA/Software-Developer-Summer-2021-Student-Opportunities-Montreal?utm_source=LinkedIn&utm_medium=phenom-feeds&utm_campaign"
+    },
+    {
+        "CompanyName": "Ubisoft",
+        "Position": "Back-End Programmer (Technology Group)",
+        "Salary": 77000,
+        "Address": "5505 Boulevard Saint-Laurent, Montreal, QC H2T 1S6, Canada",
+        "Image": "assets/Ubisoft.png",
+        "Type": "Full-time",
+        "URL": "https://jobs.smartrecruiters.com/Ubisoft2/743999734133833-back-end-programmer-technology-group-"
+    },
+    {
+        "CompanyName": "Shutterstock",
+        "Position": "Software Engineer, Editor",
+        "Salary": 110000,
+        "Address": "4398 Boulevard Saint-Laurent, Montreal, QC H2W 1Z5, Canada",
+        "Image": "assets/Shutterstock.jpg",
+        "Type": "Full-time",
+        "URL": "https://shutterstock.wd1.myworkdayjobs.com/en-US/ShutterstockCareers/job/Montreal/API-Integrations-Engineer_R0000514-1"
+    },
+    {
+        "CompanyName": "Ericsson",
+        "Position": "Software Developer",
+        "Salary": 77000,
+        "Address": "Rue Cohen, Saint-Laurent, QC H4R 2A4",
+        "Image": "assets/Ericsson.png",
+        "Type": "Full-time",
+        "URL": "https://jobs.ericsson.com/job/Montreal-Software-Developer-QC/708073100/?feedId=322400"
+    },
+    {
+        "CompanyName": "Electronic Arts (EA)",
+        "Position": "Software Engineer in Test - Temporary",
+        "Salary": 75000,
+        "Address": "2200 Rue Stanley, Downtown Montreal, Montreal, QC H3A 1R6, Canada",
+        "Image": "assets/EA.png",
+        "Type": "Full-time",
+        "URL": "https://ea.gr8people.com/jobs/163459/software-engineer-in-test-temporary?sid=4"
+    },
+    {
+        "CompanyName": "Matrox",
+        "Position": "Software Developper : Validation",
+        "Salary": 76000,
+        "Address": "1055 St Regis Blvd, Dorval, QC H9P, Canada",
+        "Image": "assets/Matrox.jpg",
+        "Type": "Full-time",
+        "URL": "https://www.matrox.com/en/career/software-developer-validation"
+    },
+    {
+        "CompanyName": "Unity Technologies",
+        "Position": "Software Developper",
+        "Salary": 98000,
+        "Address": "1751 Rue Richardson, Le Sud-Ouest, Montreal, QC H3K 1G6, Canada",
+        "Image": "assets/Unity.png",
+        "Type": "Internship",
+        "URL": "https://careers.unity.com/position/software-developer-full-stack-unity/2438263?gh_src=ilfw6o"
+    },
+    {
+        "CompanyName": "Ciena",
+        "Position": "New Grad: Test Engineer",
+        "Salary": 65000,
+        "Address": "2351 Boulevard Alfred Nobel #300, Saint-Laurent, QC H4S 2A9",
+        "Image": "assets/Ciena.png",
+        "Type": "Full-time",
+        "URL": "https://careers.ciena.com/us/en/job/CIENUSR014704ENUS/New-Grad-Test-Engineer"
+    },
+    {
+        "CompanyName": "CM Labs Simulations",
+        "Position": "Software Developer",
+        "Salary": 110000,
+        "Address": "645 Rue Wellington, Montreal, QC H3C, Canada",
+        "Image": "assets/CM_Labs.png",
+        "Type": "Full-time",
+        "URL": "https://jobs.smartrecruiters.com/CMLabs/743999734163016-software-developer"
+    },
+    {
+        "CompanyName": "SAP",
+        "Position": "Developer",
+        "Salary": 70000,
+        "Address": "111 Rue Duke, Downtown Montreal, Montreal, QC H3C, Canada",
+        "Image": "assets/SAP.jpg",
+        "Type": "Full-time",
+        "URL": "https://jobs.sap.com/job/Montreal-Developer-QC/645620501/?feedId=244601&utm_campaign=limitedlistings&utm_source=LILimitedListings"
+    },
+      {
+        "CompanyName": "CAE",
+        "Position": "Software Engineer",
+        "Salary": 71000,
+        "Address": "8585 Chemin de la Côte-de-Liesse, Saint-Laurent, QC H4T 1G6",
+        "Image": "assets/CAE.png",
+        "Type": "Full-time",
+        "URL": "https://cae.wd3.myworkdayjobs.com/en-US/career/job/Montreal-St-Laurent/Architecte-logiciel--Software-Architect_73001-1?utm_source=website&utm_medium=open_jobs&utm_campaign=caedotcom"
+    },
+      {
+        "CompanyName": "Mistplay",
+        "Position": "Backend Software Engineer (NodeJS)",
+        "Salary": 85000,
+        "Address": "481 Viger Ave W, Montreal, Quebec H2Z 1G6",
+        "Image": "assets/Mistplay.jpg",
+        "Type": "Full-time",
+        "URL": "https://jobs.lever.co/mistplay/830113e2-1e02-4750-b32a-a121eff5c49e"
+    },
+      {
+        "CompanyName": "IPERCEPTIONS INC.",
+        "Position": "Software Engineer",
+        "Salary": 53000,
+        "Address": "606 Rue Cathcart #1007, Montreal, Quebec H3B 1K8",
+        "Image": "assets/iperceptions.png",
+        "Type": "Full-time",
+        "URL": "https://ca.indeed.com/jobs?q=software%20engineer&l=Montr%C3%A9al%2C%20QC&vjk=c25ef29d42c17dcf&advn=4595264252674249"
+    },
+    {
+        "CompanyName": "Environment and Climate Change Quebec",
+        "Position": "Application Programmer Team Lead",
+        "Salary":95000,
+        "Address": "2121 Rte Transcanadienne, Dorval, QC H9P 1J3",
+        "Image": "assets/canada.jpg",
+        "Type": "Full-time",
+        "URL": "https://emploisfp-psjobs.cfp-psc.gc.ca/psrs-srfp/applicant/page1800?toggleLanguage=en&poster=1531152"
+    }
+]

@@ -5,15 +5,19 @@
         <title>Jobtree</title>
 
         <script type="text/javascript" src="js_doc.js"></script>
+
         <link rel="icon" href="https://d1h0x9w88ijkiq.cloudfront.net/3705/images/favicon_play.ico"
                 crossorigin="anonymous">
 
         <meta charset="utf-8">
 
-        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>        
+        <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+                rel="stylesheet">
+        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+                integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+                crossorigin="anonymous">
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -34,15 +38,19 @@
         <link rel="stylesheet" href="css_doc.css">
 </head>
 
-<body>
-     
-
+<body onload="chargerDisplayJobs()">
         <div class="mainContainer">
-                <div class = "top-nav-container">
-                        <div class="top-nav-search-bar-section">
-                          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <div class="top-nav-container">
+                        <div class="top-nav-search-section">
+                                <div class="search">
+                                        <input type="text" class="searchTerm" placeholder="Search">
+                                        <button type="submit" class="searchButton" onclick="onSearch()">
+                                                <i class=" fa fa-search"></i>
+                                        </button>
+                                </div>
                         </div>
                         <div class="top-nav-filter-section">
+<<<<<<< HEAD
                           <mat-form-field appearance="fill">
                             <mat-label>CityFilter</mat-label>
                             <input class="form-control mr-sm-2 matInput placeholder="Ex.Montreal">
@@ -54,37 +62,43 @@
                           </mat-form-field>
                       
                           <button mat-button>Search</button>
-                        </div>
-                      </div>
-                      <div class = "mapsAndIndex">
-                        <div class = "display-job">
-                                <div class = "jobTitle">
-                                        <div class ="logo">
-                                        logo
-                                        </div>
-                                        <div  class ="description">
-                                          description
-                                        </div>
-                                        <div class = "index">
-                                          index
-                                        </div>
-                                      </div>
+=======
+                                <div class="job-type-input">
+                                        <label id="job-text">Type : </label>
+                                        <select class="position-input">
+                                                <option value="invalid">All</option>
+                                                <option value="Internship">Internship</option>
+                                                <option value="Full-time">Full-Time</option>
+                                                <option valie="Part-time">Part-Time</option>
+                                        </select>
                                 </div>
-                        <div class = "display-google-maps">
-                              <div class = "container2">   <div id="map"></div>
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMEzdKOIaxHdB4BNjWH0iPgN8vPSiIF5Y&callback=initMap&libraries=places&v=weekly"
-                                async>
-                                </script>
-                                <input id="test" type="text">
-                                <button onclick="test_func()">test</button></div>
-                              <div class ="container3">categories and index</div>
+                                <div class="job-type-input">
+                                        <label id="job-text">Minimum Salary : </label>
+                                        <input type="number" step="5000" value="0" class="min-input">
+                                </div>
+                                <div type="button" class="top-nav-submit-button">
+                                        <button class="submit-button" onclick="onSearch()">APPLY</button>
+                                </div>
+                                <img src="assets/finalone.png" alt="jobtree_logo"
+                                        style="height: 10%; width: 10%; padding-top: 20px; padding-bottom: 20px; padding-right: 10px;">
+>>>>>>> 96ebd32b82114be3cbc3752a5bae701c876f4098
                         </div>
-                      </div>
-                              
-                      
-                      
+                </div>
+
+                <div class="mapsAndIndex">
+                        <div id="jobsHandler"></div>
+                        <div id="googleMaps" class="display-google-maps">
+                                <div class="container2">
+                                        <div id="map"></div>
+                                        <script src="https://maps.googleapis.com/maps/api/js?key=ADD_YOUR_GOOGLE_API_KEY&callback=initMap&libraries=places&v=weekly"
+                                                async>
+                                                </script>
+                                </div>
+                                <div id ="heatMapButton" class="heatMap">
+                                        <button onclick="addHeatMap()">Display Heat Map </button>
+                                </div>
+                                <div id="divIndexes"></div>
+                        </div>
+                </div>
         </div>
-
-
-
 </body>
