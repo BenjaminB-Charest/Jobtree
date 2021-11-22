@@ -24,4 +24,4 @@ To compile :
 2. Right-click the HTML file
 3. Run with Live server (If this extension is not downloaded, you can add it by searching in VSCode extension marketplace.)
 4. The website should open on your default browser :)
->>>>>>> 96ebd32b82114be3cbc3752a5bae701c876f4098
+
