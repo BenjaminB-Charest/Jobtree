@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Hackatown
 
 L'idée que nous avons eu pour ce hackatown c'était de déterminer à l'aide de 3 indices : le salaire, la distance et le loyer en fonction
