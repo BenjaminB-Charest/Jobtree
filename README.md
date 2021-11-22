@@ -11,7 +11,7 @@ en moyenne ainsi que le calcul du loyer était calculer.
 Ensuite, en fonction de chaque quartier, une heatmap démontrait une moyenne pondérée de chaque indice pour chaque quartier
 
 La carte a été implémentée avec Google Maps APIS. 
-=======
+
 # Jobtree
 To add key:
 Add Google API key in the inline script section right below the div with ID as "map". *NOTE: During the hackathon, the key will remain active for the judges this step is not necessary. 
